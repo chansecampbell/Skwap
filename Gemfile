@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby "2.2.3"
 
+gem 'foundation-rails', '~> 5.5.3'
 # Used for the authentication/sessions
 gem 'devise', '3.4.1'
 gem 'omniauth', '1.2.2'
