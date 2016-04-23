@@ -1,4 +1,5 @@
 class ConnectionsController < ApplicationController
+    before_action :set_connection, only: [:accept, :reject, :cancel]
 
  def new
      @skill = Skill.find(params[:skill_id])
@@ -20,8 +21,31 @@ class ConnectionsController < ApplicationController
      end
  end
 
+ def accept
+     @connection.accept!
+     flash[:success] = "You accepted a connection!"
+     redirect_to :back
+ end
+
+ def reject
+     @connection.reject!
+    flash[:danger] = "You rejected a connection!"
+    redirect_to :back
+ end
+
+ def cancel
+     @connection.cancel!
+     flash[:info] = "You cancelled a connection!"
+     redirect_to :back
+ end
+
 
  private
+
+ def set_connection
+   @connection = Connection.find(params[:id])
+ end
+
  def connection_params
      params.require(:connection).permit(:details, :meetup_time, :skill_id)
  end

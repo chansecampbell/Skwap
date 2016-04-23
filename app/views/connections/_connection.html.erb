@@ -10,15 +10,20 @@
   </div>
   <div class="row">
     <div class="medium-12 columns medium-centered">
-  <p><%= connection.meetup_time %></p>
+  <p>Meetup time: <%= connection.meetup_time %></p>
+  </div>
+  </div>
+  <div class="row">
+    <div class="medium-12 columns medium-centered">
+  <p>Status: <%= connection.status %></p>
   </div>
   </div>
   <div class="actions pull-xs-right">
      <% if current_page?(action: "outbox")%>
-        <a href="#" class="btn btn-secondary">Cancel</a>
+        <%= link_to "Cancel", cancel_connection_path(connection), class: "btn btn-secondary" %>
     <% else %>
-        <a href="#" class="btn btn-danger">Reject</a>
-        <a href="#" class="btn btn-success">Accept</a>
+        <%= link_to "Reject", reject_connection_path(connection), class: "btn btn-danger" %>
+        <%= link_to "Accept", accept_connection_path(connection), class: "btn btn-success" %>
     <% end %>
   </div>
 </div>
