@@ -1,1 +1,37 @@
 <h3>New Connection Request...</h3>
+<h3><%= @skill.title %></h3>
+<%= form_for [@skill, @connection] do |f| %>
+  <% if @connection.errors.any? %>
+    <% for message in @connection.errors.full_messages %>
+      <div class="alert alert-danger" role="alert">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="row" data-equalizer>
+    <div class="medium-12 columns" data-equalizer-watch>
+  <div class="field">
+    <%= f.text_area :details, placeholder: "Connection Message.." %>
+  </div>
+    </div>
+   </div>
+
+    <div class="row" data-equalizer>
+      <div class="medium-12 columns" data-equalizer-watch>
+    <div class="field">
+    <%= f.date_field :meetup_time, meetup_time: "Preferred Meetup Time" %>
+    </div>
+      </div>
+    </div>
+
+  <div class="row" data-equalizer>
+    <div class="medium-12 columns" data-equalizer-watch>
+  <div class="field">
+  <div class="actions">
+    <%= f.submit "Connect" %>
+  </div>
+  </div>
+  </div>
+
+<% end %>
