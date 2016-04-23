@@ -6,8 +6,25 @@
   <div class="row" data-equalizer>
     <div class="medium-12 columns" data-equalizer-watch>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.text_field :first_name, placeholder: "First Name", autofocus: true %>
+  </div>
+  </div>
+  </div>
+
+
+  <div class="row" data-equalizer>
+    <div class="medium-12 columns" data-equalizer-watch>
+  <div class="field">
+    <%= f.text_field :last_name, placeholder: "Last Name", autofocus: true %>
+  </div>
+  </div>
+  </div>
+
+
+  <div class="row" data-equalizer>
+    <div class="medium-12 columns" data-equalizer-watch>
+  <div class="field">
+    <%= f.text_field :location, placeholder: "Location", autofocus: true %>
   </div>
   </div>
   </div>
@@ -15,11 +32,7 @@
   <div class="row" data-equalizer>
     <div class="medium-12 columns" data-equalizer-watch>
   <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.email_field :email, placeholder: "Email Address", autofocus: true %>
   </div>
   </div>
   </div>
@@ -27,15 +40,25 @@
   <div class="row" data-equalizer>
     <div class="medium-12 columns" data-equalizer-watch>
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password, placeholder: "Password (8 characters minimum)", autocomplete: "off" %>
   </div>
   </div>
   </div>
 
+  <div class="row" data-equalizer>
+    <div class="medium-12 columns" data-equalizer-watch>
+  <div class="field">
+    <%= f.password_field :password_confirmation, placeholder: "Password confirmation", autocomplete: "off" %>
+  </div>
+  </div>
+  </div>
+
+  <div class="row" data-equalizer>
+    <div class="medium-12 columns" data-equalizer-watch>
+  <div class="field">
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+  </div>
+  </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
