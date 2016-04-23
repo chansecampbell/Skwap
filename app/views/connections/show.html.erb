@@ -4,5 +4,6 @@
 <p>Padawan: <%= current_user.first_name %></p>
 <p>Master: <%= @skill.user.first_name %></p>
 
+
 <%= render partial: 'comments/form', locals: { commentable: @connection } %>
 <%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @connection } %>
