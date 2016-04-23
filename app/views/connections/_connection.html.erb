@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="medium-12 columns medium-centered">
+  <h4> <%= connection.skill.try(:title) %></h4>
+  </div>
+  </div>
+  <div class="row">
+    <div class="medium-12 columns medium-centered">
+  <p><%= connection.details %></p>
+  </div>
+  </div>
+  <div class="row">
+    <div class="medium-12 columns medium-centered">
+  <p><%= connection.meetup_time %></p>
+  </div>
+  </div>
+  <div class="actions pull-xs-right">
+     <% if current_page?(action: "outbox")%>
+        <a href="#" class="btn btn-secondary">Cancel</a>
+    <% else %>
+        <a href="#" class="btn btn-danger">Reject</a>
+        <a href="#" class="btn btn-success">Accept</a>
+    <% end %>
+  </div>
+</div>
