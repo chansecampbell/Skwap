@@ -1,6 +1,13 @@
-<h3>All Services</h3>
 <div class="row">
-  <div class="medium-6 columns medium-centered">
-  <%= skill.title %>
+  <div class="medium-12 columns medium-centered">
+  <h1><%= link_to skill.title, skill %></h1>
+  </div>
+  </div>
+  <div class="row" data-equalizer>
+    <div class="medium-6 columns" data-equalizer-watch>
+  <li>Response time: <%= skill.response_time %></li>
+  </div>
+  <div class="medium-6 columns" data-equalizer-watch>
+  <li>Posted by: <%= skill.user.first_name %></li>
   </div>
   </div>
