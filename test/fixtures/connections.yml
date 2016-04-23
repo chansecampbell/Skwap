@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  skill_id: 
+  meetup_time: 2016-04-23
+  details: MyText
+  status: MyString
+  sender_id: 1
+  receiver: 1
+
+two:
+  skill_id: 
+  meetup_time: 2016-04-23
+  details: MyText
+  status: MyString
+  sender_id: 1
+  receiver: 1

@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   get '/about', to: "statics#about"
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
      resources :users, except: [:new, :create]
-     resources :skills
+     resources :skills do
+         resources :connections
+     end
 end
