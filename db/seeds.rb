@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+User.destroy_all
+Skill.destroy_all
+
+u1 = User.create!(email: "bob@bob.com", 
+                  password: "password", 
+                  first_name: "Bob", 
+                  last_name: "Brown", 
+                  profile_picture: "http://fillmurray.com/250/250", 
+                  location: "East London")
+            
+u2 = User.create!(email: "chanse@chanse.com", 
+                  password: "password", 
+                  first_name: "Chanse", 
+                  last_name: "Campbell", 
+                  profile_picture: "http://fillmurray.com/250/250", 
+                  location: "East London")
+
+s1 = u1.skills.create!(title: "Ukulele Lesson Beginner/Intermediate ",
+                         description: "I'm a fairly experienced musician having played multiple instruments since the age of 9. I've noticed a rise in popularity for one of my favourite instruments, the Ukulele, so I thought I would offer some 1 hour lessons for anyone who's wanting to pick one up or learn some new tricks.",
+                         response_time: "Within 3 hours")
