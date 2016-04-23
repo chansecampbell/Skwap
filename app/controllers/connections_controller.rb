@@ -26,6 +26,7 @@ class ConnectionsController < ApplicationController
  def show
     @connection = Connection.find(params[:id])
     @skill = Skill.find(params[:skill_id])
+    @comments = @connection.comments
  end
 
  def accept

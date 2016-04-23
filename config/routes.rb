@@ -11,7 +11,6 @@ Rails.application.routes.draw do
      get "/inbox", to: "connections#inbox"
      get "/outbox", to: "connections#outbox"
 
-
        resources :connections, only: [] do 
          member do
            get "accept"
@@ -19,4 +18,6 @@ Rails.application.routes.draw do
            get "cancel"
        end
      end
+
+     resources :comments, only: [:create, :destroy]
 end

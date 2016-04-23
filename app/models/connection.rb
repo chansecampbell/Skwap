@@ -2,6 +2,7 @@ class Connection < ActiveRecord::Base
   belongs_to :skill
   belongs_to :user
   before_validation :add_default_status
+  acts_as_commentable
 
   def accept!
       self.status = "accepted"
