@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby "2.2.3"
 
+# Used for creating comments
+gem 'acts_as_commentable', '4.0.2'
+# Css framework
 gem 'foundation-rails', '~> 5.5.3'
 # Used for the authentication/sessions
 gem 'devise', '3.4.1'

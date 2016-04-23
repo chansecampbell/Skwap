@@ -11,6 +11,8 @@ class ConnectionsController < ApplicationController
      @connection = @skill.connections.new(connection_params)
      @connection.sender_id = current_user.id
      @connection.receiver_id = @skill.user.id
+     # @padawan = current_user.first_name
+     # @master = @skill.user.first_name
      
      if @connection.save
          flash[:success] = "Your enquiry was made successfully"
@@ -19,6 +21,11 @@ class ConnectionsController < ApplicationController
          flash[:danger] = "Your enquiry was not sent"
          redirect_to skills_path
      end
+ end
+
+ def show
+    @connection = Connection.find(params[:id])
+    @skill = Skill.find(params[:skill_id])
  end
 
  def accept
