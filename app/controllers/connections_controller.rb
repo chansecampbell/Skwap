@@ -27,6 +27,12 @@ class ConnectionsController < ApplicationController
     @connection = Connection.find(params[:id])
     @skill = Skill.find(params[:skill_id])
     @comments = @connection.comments
+    @user = User.all
+
+    # if current_user.id != @connection.sender_id
+    #     redirect_to skills_path
+    # end
+
  end
 
  def accept
