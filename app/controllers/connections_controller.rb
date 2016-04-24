@@ -1,4 +1,5 @@
 class ConnectionsController < ApplicationController
+    before_filter :authenticate_user!
     before_action :set_connection, only: [:accept, :reject, :cancel]
 
  def new
@@ -28,6 +29,11 @@ class ConnectionsController < ApplicationController
     @skill = Skill.find(params[:skill_id])
     @comments = @connection.comments
     @user = User.all
+
+    if @connection.sender_id != current_user.id
+        redirect_to skills_path
+    end
+
 
     # if current_user.id != @connection.sender_id
     #     redirect_to skills_path
