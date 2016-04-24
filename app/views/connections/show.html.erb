@@ -1,8 +1,11 @@
 <h3>Connection show page</h3>
 
-<p><%= @skill.title %></p>
-<p>Padawan: <%= @connection.sender_id %></p>
-<p>Master: <%= @skill.user.first_name %></p>
+<h3><%= @skill.title %></h3>
+<li><strong>Padawan:</strong> <%= @connection.sender_id %></li>
+<li><strong>Master:</strong> <%= @skill.user.first_name %></li>
+<li><strong>Message:</strong> <%= @connection.details %></li>
+<li><strong>Meetup Date:</strong> <%= @connection.meetup_time.strftime("%B %d, %Y") %></li>
+<li><strong>Available period:</strong> <%= @skill.availability %></li>
 
 
 <%= render partial: 'comments/form', locals: { commentable: @connection } %>

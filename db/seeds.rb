@@ -20,7 +20,7 @@ s1 = u1.skills.create!(title: "Ukulele Lesson Beginner/Intermediate ",
                          response_time: "Within 3 hours",
                          location: "East London",
                          category: "Music",
-                         availability: "Weekends")
+                         availability: "Evening")
 
 c1 = Connection.create!(skill_id: s1.id,
                          meetup_time: Time.now + 1.week.to_i,

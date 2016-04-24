@@ -6,19 +6,24 @@
   </div>
   <div class="row">
     <div class="medium-6 columns" data-equalizer-watch>
-    <li>Location: <%= skill.location %></li>
+    <li><strong>Location:</strong> <%= skill.location %></li>
     </div>
-      <div class="medium-6 columns" data-equalizer-watch>
-      <li>Category: <%= skill.category %></li>
-        </div>
-      </div>
+    <div class="medium-6 columns" data-equalizer-watch>
+    <li><strong>Posted by:</strong> <%= skill.user.first_name %></li>
+    </div>
+    </div>
   <div class="row" data-equalizer>
     <div class="medium-6 columns" data-equalizer-watch>
-  <li>Response time: <%= skill.response_time %></li>
+  <li><strong>Response time:</strong> <%= skill.response_time %></li>
   </div>
-  <div class="medium-6 columns" data-equalizer-watch>
-  <li>Posted by: <%= skill.user.first_name %></li>
+    <div class="medium-6 columns" data-equalizer-watch>
+  <li><strong>Availability:</strong> <%= skill.availability %></li>
   </div>
+  </div>
+  <div class="row" data-equalizer>
+  <div class="medium-12 columns medium-centered" data-equalizer-watch>
+  <li><strong>Category:</strong> <%= skill.category %></li>
+    </div>
   </div>
     <% end %>
   

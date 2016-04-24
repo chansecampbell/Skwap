@@ -25,9 +25,17 @@ class SkillsController < ApplicationController
   end
 
   def edit
+    @skill = Skill.find(params[:id])
   end
 
   def update
+    @skill = Skill.find(params[:id])
+    if @skill.update(skill_params)
+      flash[:success] = "Changes have been made"
+      redirect_to skill_path 
+    else 
+      render "edit"
+    end
   end
 
   def destroy
