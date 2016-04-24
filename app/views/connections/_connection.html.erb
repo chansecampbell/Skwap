@@ -19,6 +19,8 @@
   <p>Status: <%= connection.status %></p>
   </div>
   </div>
+  <div class="row">
+    <div class="medium-12 columns medium-centered">
   <div class="actions pull-xs-right">
      <% if current_page?(action: "outbox")%>
         <%= link_to "Cancel", cancel_connection_path(connection), class: "btn btn-secondary" %>
@@ -27,4 +29,5 @@
         <%= link_to "Accept", accept_connection_path(connection), class: "btn btn-success" %>
     <% end %>
   </div>
+</div>
 </div>

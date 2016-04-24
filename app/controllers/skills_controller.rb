@@ -33,9 +33,6 @@ class SkillsController < ApplicationController
   def destroy
   end
 
-
-
-
   private
       def skill_params
           params.require(:skill).permit(:title, :description, :response_time, :location, :category, :availability)
