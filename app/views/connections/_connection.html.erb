@@ -1,6 +1,6 @@
 <div class="row">
   <div class="medium-12 columns medium-centered">
-  <h4><a href="/skills/1/connections/1"><%= connection.skill.try(:title)%></a></h4>
+  <h4><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></h4>
 
   </div>
   </div>
