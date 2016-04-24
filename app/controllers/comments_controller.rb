@@ -7,9 +7,9 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @commentable, notice: "Thanks for commenting." }
+        format.html { redirect_to :back, notice: "Thanks for commenting." }
       else
-        format.html { redirect_to @commentable, notice: "Comment wasn't successfully created." }
+        format.html { redirect_to :back, notice: "Comment wasn't successfully created." }
       end
     end
   end
@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     respond_to do |format|
-      format.html {redirect_to @commentable, notice: "Your comment was successfully destroyed."}
+      format.html {redirect_to :back, notice: "Your comment was successfully destroyed."}
       format.json { head :no_content }
     end
   end

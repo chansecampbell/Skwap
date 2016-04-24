@@ -30,10 +30,13 @@ class ConnectionsController < ApplicationController
     @comments = @connection.comments
     @user = User.all
 
-    if @connection.sender_id != current_user.id
-        redirect_to skills_path
-    end
+    @private_users = [@connection.sender_id, @connection.receiver_id]
 
+    if !@private_users.include? current_user.id
+            redirect_to skills_path
+            flash[:danger] = "You can't be on this page!"
+
+    end
 
     # if current_user.id != @connection.sender_id
     #     redirect_to skills_path

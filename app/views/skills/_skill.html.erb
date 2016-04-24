@@ -1,8 +1,17 @@
+<% if current_user.id != skill.user.id %>
 <div class="row">
   <div class="medium-12 columns medium-centered">
   <h1><%= link_to skill.title, skill %></h1>
   </div>
   </div>
+  <div class="row">
+    <div class="medium-6 columns" data-equalizer-watch>
+    <li>Location: <%= skill.location %></li>
+    </div>
+      <div class="medium-6 columns" data-equalizer-watch>
+      <li>Category: <%= skill.category %></li>
+        </div>
+      </div>
   <div class="row" data-equalizer>
     <div class="medium-6 columns" data-equalizer-watch>
   <li>Response time: <%= skill.response_time %></li>
@@ -16,4 +25,5 @@
     <li><%= link_to "Connect", new_skill_connection_path(skill), class: "btn-btn-primary" %></li>
     </div>
     </div>
+    <% end %>
   
