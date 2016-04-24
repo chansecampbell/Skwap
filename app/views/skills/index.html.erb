@@ -1,2 +1,21 @@
 <h3>All Skills</h3>
+
+<%= search_form_for @q do |f| %>
+  <p>
+    <%= f.label :location_cont %>
+    <%= f.text_field :location_cont %>
+  </p>
+  <p>
+    <%= f.label :category_cont %>
+    <%= f.text_field :category_cont %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+<button><%= sort_link @q, :title %></button>
+
 <%= render @skills %>
+

@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby "2.2.3"
 
+# Used to be able to search using keywords
+gem 'ransack'
 # Used for creating comments
 gem 'acts_as_commentable', '4.0.2'
 # Css framework
