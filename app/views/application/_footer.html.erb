@@ -1,2 +1,18 @@
 
-<footer id="footer"></footer>
+<footer id="footer">
+  <nav>
+    <ul>
+<!--       <li class="footer-copy">© 2016 Skwap App</li>
+ -->    <% if user_signed_in? %>
+      <li class="personal-header">Hello, <%= current_user.first_name %>. You have <%= current_user.credits %> credits remaining.</li>
+      <% if current_user.credits > 0 %>
+      <li class="personal-header">Why not find a new skill to learn?</li>
+      <% else %>
+      <li class="personal-header">Why not share a skill now to earn more?</li>
+      <% end %>
+      <% else %>
+      <li class="personal-header">Sign up today to try your first lesson free!</li>
+      <% end %>
+    </ul>
+  </nav>
+</footer>

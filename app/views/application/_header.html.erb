@@ -3,7 +3,16 @@
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
+    <% current_uri = request.env['PATH_INFO'] %>
+    <% if current_uri == skills_path %>
+      <h1><%= link_to "Skwap learn", root_path %></h1>
+      <% elsif current_uri == new_skill_path %>
+      <h1><%= link_to "Skwap share", root_path %></h1>
+<!--       <#% elsif current_uri == skill_connection_path %>
+      <h1><#%= link_to "Skwap Connect", root_path %></h1> -->
+      <% else %>
       <h1><%= link_to "Skwap", root_path %></h1>
+      <% end %>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
@@ -17,7 +26,6 @@
       <li><%= link_to "ABOUT", about_path %></li>
       <li><%= link_to 'LEARN', skills_path %></li>
       <li><%= link_to 'SHARE', new_skill_path %></li>
-     <!--  <li><span>Hello, <%#= current_user.first_name %></span></li> -->
       <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
       <% else %>
       <li><%= link_to "ABOUT", about_path %></li>
