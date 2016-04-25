@@ -1,3 +1,14 @@
 <h3>New Skill form</h3>
 <%= render "form" %>
 
+
+<h3><%= current_user.first_name %>'s Teachings</h3>
+<% @connections.each do |connection| %>
+<% if current_user.id == connection.receiver_id %>
+<h3><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></h3>
+<li><strong>Message:</strong> <%= connection.details %></li>
+<li><strong>Sender ID:</strong> <%= connection.sender_id %></li>
+<li><strong>Receiver ID:</strong> <%= connection.receiver_id %></li>
+<li><strong>Lesson status:</strong> <%= connection.status %></li>
+<% end %>
+  <% end %>

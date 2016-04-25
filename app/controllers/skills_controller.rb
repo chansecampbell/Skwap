@@ -9,6 +9,7 @@ class SkillsController < ApplicationController
 
   def new
     @skill = Skill.new
+    @connections = Connection.all
   end
 
   def show
