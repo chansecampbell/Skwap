@@ -17,8 +17,6 @@
       <li><%= link_to "ABOUT", about_path %></li>
       <li><%= link_to 'LEARN', skills_path %></li>
       <li><%= link_to 'SHARE', new_skill_path %></li>
-      <li><%= link_to 'INBOX', inbox_path %></li>
-      <li><%= link_to 'OUTBOX', outbox_path %></li>
      <!--  <li><span>Hello, <%#= current_user.first_name %></span></li> -->
       <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
       <% else %>

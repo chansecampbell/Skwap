@@ -1,4 +1,4 @@
-<ul class="tabs" data-tab>
+<ul class="tabs" data-tab data-options="deep_linking: true">
   <li class="tab-title active"><a href="#panel1">Share a skill</a></li>
   <li class="tab-title"><a href="#panel2"><%= current_user.first_name %>'s listings</a></li>
   <li class="tab-title"><a href="#panel3">Messages</a></li>
@@ -9,6 +9,9 @@
   </div>
 
   <div class="content" id="panel2">
+  <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+  <li><strong>Credits:</strong> <%= current_user.credits %></li>
+  <p><h3>My Learnings</h3></p>
    <% current_user.skills.each do |skill| %>
    <li><strong><%= link_to skill.try(:title), edit_skill_path(skill) %></strong></li>
    <% end %>

@@ -8,9 +8,7 @@ Rails.application.routes.draw do
          resources :connections
          get "/show", to: "connections#show"
      end
-     get "/inbox", to: "connections#inbox"
-     get "/outbox", to: "connections#outbox"
-
+     
        resources :connections, only: [] do 
          member do
            get "accept"

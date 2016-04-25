@@ -17,7 +17,7 @@ class ConnectionsController < ApplicationController
      
      if @connection.save
          flash[:success] = "Your enquiry was made successfully"
-         redirect_to outbox_path
+         redirect_to skills_path
      else
          flash[:danger] = "Your enquiry was not sent"
          redirect_to skills_path
@@ -63,10 +63,15 @@ class ConnectionsController < ApplicationController
  end
 
  def complete
+    @connection = Connection.find(params[:id])
+    @sender = User.where(id: @connection.sender_id)
      @connection.complete!
      flash[:info] = "You completed a connection!"
      # @user = User.where(id: @connection.receiver_id)
-     # @current_user.credits += 1
+     current_user.increment!(:credits)
+     @sender.first.decrement!(:credits)
+     puts "************************************"
+     puts @sender.first.inspect
      redirect_to :back
  end
 

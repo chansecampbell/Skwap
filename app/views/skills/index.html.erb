@@ -28,6 +28,7 @@
   <div class="content" id="panel2">
   <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
   <li><strong>Credits:</strong> <%= current_user.credits %></li>
+  <p><h3>My Learnings</h3></p>
    <% @connections.each do |connection| %>
    <% if current_user.id == connection.sender_id %>
    <li><strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
