@@ -1,6 +1,6 @@
 <%= form_for(@skill) do |f| %>
 <%= f.text_field :title, placeholder: "Title", autofocus: true %>
-<%= f.select :category, ['Music', 'Sport', 'Coding', 'Cooking'], autofocus: true %>
+<%= f.select :category, ['Music', 'Sport', 'Coding', 'Cooking'] %>
 <%= f.text_area :description, placeholder: "Description", autofocus: true %>
 <%= f.select :location, ['North London', 'East London', 'South London', 'West London', 'Central London'], autofocus: true %> 
 <%= f.select :availability, ['Morning', 'Afternoon', 'Evening'], autofocus: true %>

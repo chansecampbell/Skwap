@@ -1,3 +1,4 @@
 <%= render @skill %>
 <li><%= @skill.description %></li>
-<li><%= link_to "Connect", new_skill_connection_path(@skill), class: "btn-btn-primary" %></li>
+<p><li><%= link_to "Connect", new_skill_connection_path(@skill), class: "btn-btn-primary" %></li>
+<li><%= link_to "Back", :back %></li></p>

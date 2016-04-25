@@ -1415,16 +1415,16 @@ $topbar-bg-color: #FFCC2F;  //$oil
 // $topbar-title-font-size: rem-calc(17);
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: $white;
+$topbar-link-color: #333333;
 // $topbar-link-color-hover: $white;
 // $topbar-link-color-active: $white;
-// $topbar-link-color-active-hover: $white;
-// $topbar-link-weight: $font-weight-normal;
+$topbar-link-color-active-hover: #fbbd00; //$white;
+$topbar-link-weight: bolder; //$font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-hover: $jet;
-// $topbar-link-bg-color-hover: $charcoal;
+$topbar-link-bg-hover: #FFCC2F; //$jet;
+$topbar-link-bg-color-hover: #FFCC2F; //$charcoal;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
@@ -1436,11 +1436,11 @@ $topbar-bg-color: #FFCC2F;  //$oil
 // $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: $oil;
-// $topbar-dropdown-link-color: $white;
+$topbar-dropdown-bg: #FFCC2F; //$oil;
+$topbar-dropdown-link-color: #333333; //$white;
 // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
 // $topbar-dropdown-link-bg: $oil;
-// $topbar-dropdown-link-bg-hover: $jet;
+$topbar-dropdown-link-bg-hover: #e2aa00; //$jet;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;
@@ -1456,8 +1456,8 @@ $topbar-bg-color: #FFCC2F;  //$oil
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: rem-calc(13);
 // $topbar-menu-link-weight: $font-weight-bold;
-// $topbar-menu-link-color: $white;
-// $topbar-menu-icon-color: $white;
+$topbar-menu-link-color: #333333; //$white;
+$topbar-menu-icon-color: #333333;  //$white;
 // $topbar-menu-link-color-toggled: $jumbo;
 // $topbar-menu-icon-color-toggled: $jumbo;
 // $topbar-menu-icon-position: $opposite-direction; // Change to $default-float for a left menu icon
