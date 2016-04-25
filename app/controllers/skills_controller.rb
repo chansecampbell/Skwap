@@ -20,7 +20,7 @@ class SkillsController < ApplicationController
       @skill = current_user.skills.new(skill_params)
       if @skill.save
           flash[:success] = "Your service has been listed!"
-          redirect_to skills_path
+          redirect_to new_skill_path
       else
           render "new"
       end
@@ -34,7 +34,7 @@ class SkillsController < ApplicationController
     @skill = Skill.find(params[:id])
     if @skill.update(skill_params)
       flash[:success] = "Changes have been made"
-      redirect_to skill_path 
+      redirect_to new_skill_path 
     else 
       render "edit"
     end

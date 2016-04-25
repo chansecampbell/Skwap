@@ -1,23 +1,23 @@
 <ul class="tabs" data-tab>
   <li class="tab-title active"><a href="#panel1">Share a skill</a></li>
-  <li class="tab-title"><a href="#panel2">My shares</a></li>
+  <li class="tab-title"><a href="#panel2"><%= current_user.first_name %>'s listings</a></li>
+  <li class="tab-title"><a href="#panel3">Messages</a></li>
 </ul>
 <div class="tabs-content">
   <div class="content active" id="panel1">
-    <h3>Teach a skill</h3>
     <%= render "form" %>
   </div>
 
   <div class="content" id="panel2">
-   <h3><%= current_user.first_name %>'s Listings</h3>
    <% current_user.skills.each do |skill| %>
-   <li><%= link_to skill.try(:title), skill_path(skill) %></li>
+   <li><strong><%= link_to skill.try(:title), edit_skill_path(skill) %></strong></li>
    <% end %>
+   </div>
 
-   <h3>Connection Requests</h3>
+   <div class="content" id="panel3">
    <% @connections.each do |connection| %>
    <% if current_user.id == connection.receiver_id %>
-   <li><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></li>
+   <li><strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
    <%  users = User.where(id: connection.sender_id) %>
    <% users.each do |user| %>
    <li><strong>Padawan:</strong> <%= user.first_name %></li>
@@ -25,7 +25,7 @@
    <li><strong>Lesson status:</strong> <%= connection.status %></li>
    <% end %>
    <% end %>
+   </div>
 
 
  </div>
-</div>

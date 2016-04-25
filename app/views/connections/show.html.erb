@@ -9,10 +9,11 @@
 <% @user.each do |user| %>
 <li><strong>Padawan:</strong> <%= user.first_name %></li>
 <% end %>
-<li><strong>Message:</strong> <%= @connection.details %></li>
 <li><strong>Meetup Date:</strong> <%= @connection.meetup_time.strftime("%B %d, %Y") %></li>
 <li><strong>Available period:</strong> <%= @skill.availability %></li>
-
-
-<%= render partial: 'comments/form', locals: { commentable: @connection } %>
+<%  @user = User.where(id: @connection.sender_id) %>
+<% @user.each do |user| %>
+<p><li><strong><%= user.first_name %> says:</strong> <%= @connection.details %></li>
+<% end %>
 <%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @connection } %>
+<%= render partial: 'comments/form', locals: { commentable: @connection } %></p>

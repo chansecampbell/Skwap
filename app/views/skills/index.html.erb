@@ -1,6 +1,6 @@
 <ul class="tabs" data-tab>
   <li class="tab-title active"><a href="#panel1">Learn a skill</a></li>
-  <li class="tab-title"><a href="#panel2">My learnings</a></li>
+  <li class="tab-title"><a href="#panel2"><%= current_user.first_name %>'s learnings</a></li>
 </ul>
 <div class="tabs-content">
   <div class="content active" id="panel1">
@@ -28,11 +28,9 @@
   <div class="content" id="panel2">
    <%#= current_user.inspect %>
 
-   <h3><%= current_user.first_name %>'s Lessons</h3>
    <% @connections.each do |connection| %>
    <% if current_user.id == connection.sender_id %>
-   <h3><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></h3>
-   <li><strong>Message:</strong> <%= connection.details %></li>
+   <li><strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
    <%  users = User.where(id: connection.receiver_id) %>
    <% users.each do |user| %>
    <li><strong>Master:</strong> <%= user.first_name %></li>

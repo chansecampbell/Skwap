@@ -1,0 +1,107 @@
+Searching 512 files for "topbar"
+
+/Users/Chanse/Desktop/development/wdi-project-2/app/assets/stylesheets/foundation_and_overrides.scss:
+ 1404  
+ 1405  // Background color for the top bar
+ 1406: // $topbar-bg-color: #FFCC2F;
+ 1407: // $topbar-bg: $topbar-bg-color;
+ 1408  
+ 1409  // Height and margin
+ 1410: // $topbar-height: rem-calc(45);
+ 1411: // $topbar-margin-bottom: 0;
+ 1412  
+ 1413  // Controlling the styles for the title in the top bar
+ 1414: // $topbar-title-weight: $font-weight-normal;
+ 1415: // $topbar-title-font-size: rem-calc(17);
+ 1416  
+ 1417  // Set the link colors and styles for top-level nav
+ 1418: // $topbar-link-color: $white;
+ 1419: // $topbar-link-color-hover: $white;
+ 1420: // $topbar-link-color-active: $white;
+ 1421: // $topbar-link-color-active-hover: $white;
+ 1422: // $topbar-link-weight: $font-weight-normal;
+ 1423: // $topbar-link-font-size: rem-calc(13);
+ 1424: // $topbar-link-hover-lightness: -10%; // Darken by 10%
+ 1425: // $topbar-link-bg: $topbar-bg;
+ 1426: // $topbar-link-bg-hover: $jet;
+ 1427: // $topbar-link-bg-color-hover: $charcoal;
+ 1428: // $topbar-link-bg-active: $primary-color;
+ 1429: // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
+ 1430: // $topbar-link-font-family: $body-font-family;
+ 1431: // $topbar-link-text-transform: none;
+ 1432: // $topbar-link-padding: ($topbar-height / 3);
+ 1433: // $topbar-back-link-size: rem-calc(18);
+ 1434: // $topbar-link-dropdown-padding: rem-calc(20);
+ 1435: // $topbar-button-font-size: .75rem;
+ 1436: // $topbar-button-top: 7px;
+ 1437  
+ 1438  // Style the top bar dropdown elements
+ 1439: // $topbar-dropdown-bg: $oil;
+ 1440: // $topbar-dropdown-link-color: $white;
+ 1441: // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
+ 1442: // $topbar-dropdown-link-bg: $oil;
+ 1443: // $topbar-dropdown-link-bg-hover: $jet;
+ 1444: // $topbar-dropdown-link-weight: $font-weight-normal;
+ 1445: // $topbar-dropdown-toggle-size: 5px;
+ 1446: // $topbar-dropdown-toggle-color: $white;
+ 1447: // $topbar-dropdown-toggle-alpha: .4;
+ 1448  
+ 1449: // $topbar-dropdown-label-color: $monsoon;
+ 1450: // $topbar-dropdown-label-text-transform: uppercase;
+ 1451: // $topbar-dropdown-label-font-weight: $font-weight-bold;
+ 1452: // $topbar-dropdown-label-font-size: rem-calc(10);
+ 1453: // $topbar-dropdown-label-bg: $oil;
+ 1454  
+ 1455  // Top menu icon styles
+ 1456: // $topbar-menu-link-transform: uppercase;
+ 1457: // $topbar-menu-link-font-size: rem-calc(13);
+ 1458: // $topbar-menu-link-weight: $font-weight-bold;
+ 1459: // $topbar-menu-link-color: $white;
+ 1460: // $topbar-menu-icon-color: $white;
+ 1461: // $topbar-menu-link-color-toggled: $jumbo;
+ 1462: // $topbar-menu-icon-color-toggled: $jumbo;
+ 1463: // $topbar-menu-icon-position: $opposite-direction; // Change to $default-float for a left menu icon
+ 1464  
+ 1465  // Transitions and breakpoint styles
+ 1466: // $topbar-transition-speed: 300ms;
+ 1467  // Using rem-calc for the below breakpoint causes issues with top bar
+ 1468: // $topbar-breakpoint: #{lower-bound($medium-range)}; // Change to 9999px for always mobile layout
+ 1469: // $topbar-media-query: "#{$screen} and (min-width:#{lower-bound($topbar-breakpoint)})";
+ 1470  
+ 1471  // Top-bar input styles
+ 1472: // $topbar-input-height: rem-calc(28);
+ 1473  
+ 1474  // Divider Styles
+ 1475: // $topbar-divider-border-bottom: solid 1px scale-color($topbar-bg-color, $lightness: 13%);
+ 1476: // $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
+ 1477  
+ 1478  // Sticky Class
+ 1479: // $topbar-sticky-class: ".sticky";
+ 1480: // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
+ 1481: // $topbar-dropdown-arrows: true; //Set false to remove the \00bb >> text from dropdown subnavigation li//
+ 1482  
+ 1483  // 36. Visibility Classes
+
+/Users/Chanse/Desktop/development/wdi-project-2/app/views/application/_header.html.erb:
+    1  
+    2  <header>
+    3: <nav class="top-bar" data-topbar role="navigation">
+    4    <ul class="title-area">
+    5      <li class="name">
+    .
+    7      </li>
+    8       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    9:     <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+   10    </ul>
+   11  
+
+/Users/Chanse/Desktop/development/wdi-project-2/log/development.log:
+    <binary>
+
+/Users/Chanse/Desktop/development/wdi-project-2/tmp/cache/assets/sprockets/v3.0/ia/iaCtU72dORDz5O4tDjlKFIgcxdcQsCXu6kj3O2Mj5xc.cache:
+    <binary>
+
+/Users/Chanse/Desktop/development/wdi-project-2/tmp/cache/assets/sprockets/v3.0/qt/qtyVQ0lSI1-X8ktLUjW5sdrRbDBrvAlu8EZxuU6Rz2k.cache:
+    <binary>
+
+515 matches across 5 files
