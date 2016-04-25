@@ -1,6 +1,6 @@
 <ul class="tabs" data-tab>
-  <li class="tab-title active"><a href="#panel1">Teach a skill</a></li>
-  <li class="tab-title"><a href="#panel2">My skills</a></li>
+  <li class="tab-title active"><a href="#panel1">Share a skill</a></li>
+  <li class="tab-title"><a href="#panel2">My shares</a></li>
 </ul>
 <div class="tabs-content">
   <div class="content active" id="panel1">
@@ -20,7 +20,7 @@
    <li><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></li>
    <%  users = User.where(id: connection.sender_id) %>
    <% users.each do |user| %>
-   <li><%= user.first_name %></li>
+   <li><strong>Padawan:</strong> <%= user.first_name %></li>
    <% end %>
    <li><strong>Lesson status:</strong> <%= connection.status %></li>
    <% end %>
