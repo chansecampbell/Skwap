@@ -8,6 +8,7 @@ class ConnectionsController < ApplicationController
  end
 
  def create
+    if current_user.credits > 0
      @skill = Skill.find(params[:skill_id])
      @connection = @skill.connections.new(connection_params)
      @connection.sender_id = current_user.id
@@ -22,6 +23,10 @@ class ConnectionsController < ApplicationController
          flash[:danger] = "Your enquiry was not sent"
          redirect_to skills_path
      end
+ else
+    flash[:danger] = "Sorry, you currently have no credits. Start sharing to earn more today!"
+    redirect_to skills_path
+end
  end
 
  def show
