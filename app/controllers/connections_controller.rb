@@ -17,7 +17,7 @@ class ConnectionsController < ApplicationController
      
      if @connection.save
          flash[:success] = "Your enquiry was made successfully"
-         redirect_to skills_path
+         redirect_to outbox_path
      else
          flash[:danger] = "Your enquiry was not sent"
          redirect_to skills_path

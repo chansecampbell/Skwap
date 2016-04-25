@@ -4,6 +4,7 @@ class SkillsController < ApplicationController
   def index
     @q = Skill.search(params[:q])
      @skills = @q.result(distinct: true)
+     @connections = Connection.all
   end
 
   def new
