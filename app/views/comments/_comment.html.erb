@@ -1,10 +1,10 @@
 <% if current_user == comment.user %>
 <div id="current">
-<span id="current_user_comment"><strong><%= comment.user.try(:first_name) %> says:</strong></span>
+<span><strong><%= comment.user.try(:first_name) %> says:</strong></span>
 </div>
 <% else %>
 <div id="other">
-<span id="other_user_comment"><strong><%= comment.user.try(:first_name) %> says:</strong></span>
+<span><strong><%= comment.user.try(:first_name) %> says:</strong></span>
 </div>
 <% end %>
 <span><%= comment.comment %></span>
