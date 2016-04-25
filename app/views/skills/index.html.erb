@@ -1,6 +1,6 @@
 <ul class="tabs" data-tab>
-  <li class="tab-title active"><a href="#panel1">Find a session</a></li>
-  <li class="tab-title"><a href="#panel2">My learnings</a></li>
+  <li class="tab-title active"><a href="#panel1">Find a skill</a></li>
+  <li class="tab-title"><a href="#panel2">My skills</a></li>
 </ul>
 <div class="tabs-content">
   <div class="content active" id="panel1">
@@ -33,7 +33,6 @@
    <% if current_user.id == connection.sender_id %>
    <h3><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></h3>
    <li><strong>Message:</strong> <%= connection.details %></li>
-   <li><strong>Sender ID:</strong> <%= connection.sender_id %></li>
    <li><strong>Receiver ID:</strong> <%= connection.receiver_id %></li>
    <li><strong>Lesson status:</strong> <%= connection.status %></li>
    <% end %>
