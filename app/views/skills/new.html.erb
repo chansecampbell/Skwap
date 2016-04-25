@@ -1,14 +1,25 @@
-<h3>New Skill form</h3>
-<%= render "form" %>
+<ul class="tabs" data-tab>
+  <li class="tab-title active"><a href="#panel1">List a session</a></li>
+  <li class="tab-title"><a href="#panel2">My shares</a></li>
+</ul>
+<div class="tabs-content">
+  <div class="content active" id="panel1">
+    <h3>New Skill form</h3>
+    <%= render "form" %>
+  </div>
+  <div class="content" id="panel2">
+   <h3><%= current_user.first_name %>'s Teachings</h3>
+   <% @connections.each do |connection| %>
+   <% if current_user.id == connection.receiver_id %>
+   <h3><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></h3>
+   <li><strong>Message:</strong> <%= connection.details %></li>
+   <li><strong>Sender ID:</strong> <%= connection.sender_id %></li>
+   <li><strong>Receiver ID:</strong> <%= connection.receiver_id %></li>
+   <li><strong>Lesson status:</strong> <%= connection.status %></li>
+   <% end %>
+     <% end %>
+  </div>
+</div>
 
 
-<h3><%= current_user.first_name %>'s Teachings</h3>
-<% @connections.each do |connection| %>
-<% if current_user.id == connection.receiver_id %>
-<h3><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></h3>
-<li><strong>Message:</strong> <%= connection.details %></li>
-<li><strong>Sender ID:</strong> <%= connection.sender_id %></li>
-<li><strong>Receiver ID:</strong> <%= connection.receiver_id %></li>
-<li><strong>Lesson status:</strong> <%= connection.status %></li>
-<% end %>
-  <% end %>
+
