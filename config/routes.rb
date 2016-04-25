@@ -16,6 +16,7 @@ Rails.application.routes.draw do
            get "accept"
            get "reject"
            get "cancel"
+           get "complete"
        end
      end
 

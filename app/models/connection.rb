@@ -5,17 +5,22 @@ class Connection < ActiveRecord::Base
   acts_as_commentable
 
   def accept!
-      self.status = "accepted"
+      self.status = "Accepted"
       self.save
   end
 
   def reject!
-      self.status = "rejected"
+      self.status = "Declined"
       self.save
   end
 
   def cancel!
       self.destroy
+  end
+
+  def complete!
+    self.status = "Complete"
+    self.save
   end
 
   private

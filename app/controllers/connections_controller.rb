@@ -1,6 +1,6 @@
 class ConnectionsController < ApplicationController
     before_filter :authenticate_user!
-    before_action :set_connection, only: [:accept, :reject, :cancel]
+    before_action :set_connection, only: [:accept, :reject, :cancel, :complete]
 
  def new
      @skill = Skill.find(params[:skill_id])
@@ -52,13 +52,21 @@ class ConnectionsController < ApplicationController
 
  def reject
      @connection.reject!
-    flash[:danger] = "You rejected a connection!"
+    flash[:danger] = "You declined a connection!"
     redirect_to :back
  end
 
  def cancel
      @connection.cancel!
      flash[:info] = "You cancelled a connection!"
+     redirect_to :back
+ end
+
+ def complete
+     @connection.complete!
+     flash[:info] = "You completed a connection!"
+     # @user = User.where(id: @connection.receiver_id)
+     # @current_user.credits += 1
      redirect_to :back
  end
 
