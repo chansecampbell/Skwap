@@ -6,6 +6,7 @@ class SkillsController < ApplicationController
     @skills = @q.result(distinct: true)
     @connections = Connection.all
     @categories = Skill::CATEGORIES
+    
   end
 
   def new
