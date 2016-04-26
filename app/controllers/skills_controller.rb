@@ -31,6 +31,7 @@ class SkillsController < ApplicationController
 
   def edit
     @skill = Skill.find(params[:id])
+    @categories = Skill::CATEGORIES
   end
 
   def update
