@@ -58,7 +58,7 @@ end
      @connection.accept!
      flash[:success] = "You accepted a connection!"
      @sender.first.decrement!(:credits)
-     redirect_to :back
+     redirect_to new_skill_path(:anchor => "user-listings")
     end
  end
 

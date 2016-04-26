@@ -8,7 +8,7 @@ u1 = User.create!(email: "bob@bob.com",
                   last_name: "Brown", 
                   profile_picture: "http://fillmurray.com/250/250", 
                   location: "East London",
-                  credits: 1)
+                  credits: 10)
             
 u2 = User.create!(email: "chanse@chanse.com", 
                   password: "password", 
@@ -16,7 +16,7 @@ u2 = User.create!(email: "chanse@chanse.com",
                   last_name: "Campbell", 
                   profile_picture: "http://fillmurray.com/250/250", 
                   location: "East London",
-                  credits: 1)
+                  credits: 10)
 
 s1 = u1.skills.create!(title: "Ukulele Lesson Beginner/Intermediate ",
                          description: "I'm a fairly experienced musician having played multiple instruments since the age of 9. I've noticed a rise in popularity for one of my favourite instruments, the Ukulele, so I thought I would offer some 1 hour lessons for anyone who's wanting to pick one up or learn some new tricks.",
