@@ -26,6 +26,7 @@
    <%= render @skills %>
   </div>
   <div class="content" id="user-learnings">
+  <li><%= image_tag current_user.photo.url %></li>
   <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
   <li><strong>Credits:</strong> <%= current_user.credits %></li>
   <p><h3>My Learnings</h3></p>

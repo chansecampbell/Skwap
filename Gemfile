@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 ruby "2.2.3"
 
+# Used for photo/image editing
+gem 'rmagick'
+# Used to allow photo uploads from a users device
+gem 'carrierwave', '0.10.0'
 # Used to be able to search using keywords
 gem 'ransack'
 # Used for creating comments
