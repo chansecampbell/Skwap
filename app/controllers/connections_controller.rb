@@ -18,10 +18,10 @@ class ConnectionsController < ApplicationController
      
      if @connection.save
          flash[:success] = "Your enquiry was made successfully"
-         redirect_to skills_path
+        redirect_to skills_path(:anchor => "user-learnings")
      else
          flash[:danger] = "Your enquiry was not sent"
-         redirect_to skills_path
+         redirect_to skills_path(:anchor => "learn")
      end
  else
     flash[:danger] = "Sorry, you currently have no credits. Start sharing to earn more today!"
@@ -65,13 +65,13 @@ end
  def reject
      @connection.reject!
     flash[:danger] = "You declined a connection!"
-    redirect_to :back
+    redirect_to new_skill_path(:anchor => "user-listings")
  end
 
  def cancel
      @connection.cancel!
      flash[:info] = "You cancelled a connection!"
-     redirect_to :back
+     redirect_to skills_path(:anchor => "user-learnings")
  end
 
  def complete
@@ -80,7 +80,7 @@ end
      flash[:info] = "You completed a connection!"
      # @user = User.where(id: @connection.receiver_id)
      current_user.increment!(:credits)
-     redirect_to :back
+     redirect_to new_skill_path(:anchor => "user-listings")
  end
 
 
