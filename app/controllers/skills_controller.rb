@@ -1,5 +1,5 @@
 class SkillsController < ApplicationController
-  before_filter :authenticate_user!, except: [:index] 
+  before_filter :authenticate_user!
 
   def index
     @q = Skill.search(params[:q])

@@ -29,7 +29,7 @@
    <% if connection.status == "Pending" %>
    <li><%= link_to "Accept", accept_connection_path(connection) %></li>
    <li><%= link_to "Decline", reject_connection_path(connection) %></li>
-   <% else %>
+   <% elsif connection.meetup_time.past? %>
    <li><%= link_to "Complete", complete_connection_path(connection) %></li>
    <% end %>
    <% end %>

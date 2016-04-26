@@ -50,11 +50,16 @@ end
  end
 
  def accept
+    @sender = User.where(id: @connection.sender_id)
+    if @sender.first.credits == 0
+    flash[:danger] = "The user doesn't have enough credits left to currently do this!"
+    redirect_to :back
+    else
      @connection.accept!
      flash[:success] = "You accepted a connection!"
-     @sender = User.where(id: @connection.sender_id)
      @sender.first.decrement!(:credits)
      redirect_to :back
+    end
  end
 
  def reject
