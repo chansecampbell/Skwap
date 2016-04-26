@@ -17,7 +17,6 @@ Rails.application.routes.draw do
            get "complete"
        end
      end
-
      
 
      resources :comments, only: [:create, :destroy]
