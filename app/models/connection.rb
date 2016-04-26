@@ -19,7 +19,7 @@ class Connection < ActiveRecord::Base
   end
 
   def complete!
-    self.status = "Complete"
+    self.status = "Completed"
     self.save
   end
 

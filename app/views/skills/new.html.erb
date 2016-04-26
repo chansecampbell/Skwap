@@ -1,7 +1,6 @@
 <ul class="tabs" data-tab data-options="deep_linking: true">
   <li class="tab-title active"><a href="#panel1">Share a skill</a></li>
   <li class="tab-title"><a href="#panel2"><%= current_user.first_name %>'s listings</a></li>
-  <li class="tab-title"><a href="#panel3">Messages</a></li>
 </ul>
 <div class="tabs-content">
   <div class="content active" id="panel1">
@@ -11,13 +10,12 @@
   <div class="content" id="panel2">
   <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
   <li><strong>Credits:</strong> <%= current_user.credits %></li>
-  <p><h3>My Learnings</h3></p>
+  <p><h3>My Listings</h3></p>
    <% current_user.skills.each do |skill| %>
    <li><strong><%= link_to skill.try(:title), edit_skill_path(skill) %></strong></li>
    <% end %>
-   </div>
-
-   <div class="content" id="panel3">
+   <p></p>
+   <p><h3>My Padawans</h3></p>
    <% @connections.each do |connection| %>
    <% if current_user.id == connection.receiver_id %>
    <li><strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
@@ -29,12 +27,13 @@
    <% if connection.status == "Pending" %>
    <li><%= link_to "Accept", accept_connection_path(connection) %></li>
    <li><%= link_to "Decline", reject_connection_path(connection) %></li>
-   <% elsif connection.meetup_time.past? %>
+   <% elsif connection.status == "Declined" %>
+   <li>You declined this connection</li>
+   <% elsif connection.status == "Accepted" && connection.meetup_time.past? %>
    <li><%= link_to "Complete", complete_connection_path(connection) %></li>
    <% end %>
    <% end %>
    <% end %>
    </div>
-
 
  </div>
