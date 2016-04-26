@@ -1,9 +1,16 @@
 <%= form_for(@skill) do |f| %>
-<%= f.text_field :title, placeholder: "Title", autofocus: true %>
-<%= f.select :category, ['Music', 'Sport', 'Coding', 'Cooking'] %>
-<%= f.text_area :description, placeholder: "Description", autofocus: true %>
-<%= f.select :location, ['North London', 'East London', 'South London', 'West London', 'Central London'], autofocus: true %> 
-<%= f.select :availability, ['Morning', 'Afternoon', 'Evening'], autofocus: true %>
-<%= f.text_field :response_time, placeholder: "Response Time (roughly)", autofocus: true %>
-<%= f.submit "Share Skill" %>
+  <%= f.text_field :title, placeholder: "Title", autofocus: true %>
+  
+  Category:
+  <% @categories.each do |category, value| %>
+    <label style="background-image: url('/assets/<%= value %>'); background-repeat: no-repeat; height: 150px; width: 150px; display: inline-block;">
+      <%= f.radio_button :category, category %>
+    </label>
+  <% end %>
+
+  <%= f.text_area :description, placeholder: "Description", autofocus: true %>
+  <%= f.select :location, ['North London', 'East London', 'South London', 'West London', 'Central London'], autofocus: true %>
+  <%= f.select :availability, ['Morning', 'Afternoon', 'Evening'], autofocus: true %>
+  <%= f.text_field :response_time, placeholder: "Response Time (roughly)", autofocus: true %>
+  <%= f.submit "Share Skill" %>
 <% end %>

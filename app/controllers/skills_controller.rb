@@ -3,13 +3,15 @@ class SkillsController < ApplicationController
 
   def index
     @q = Skill.search(params[:q])
-     @skills = @q.result(distinct: true)
-     @connections = Connection.all
+    @skills = @q.result(distinct: true)
+    @connections = Connection.all
+    @categories = Skill::CATEGORIES
   end
 
   def new
     @skill = Skill.new
     @connections = Connection.all
+    @categories = Skill::CATEGORIES
   end
 
   def show
