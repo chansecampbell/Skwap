@@ -5,16 +5,16 @@ class Skill < ActiveRecord::Base
 
   
   CATEGORIES = {
-    "Creative Arts": "artdrawingandpainting.png",
-    "Business": "businessadvice.png",
-    "Writing": "creativewriting.png",
-    "Food & Cooking": "drinkandfood.png",
-    "Education & Learning": "educationandlearning.png",
-    "Film & Acting": "filmvideoandacting.png",
-    "Handyman": "handyman.png",
-    "Music Lessons": "musiclessons.png",
-    "Photography Lessons": "photographylessons.png",
-    "Tech and Design": "techcodinganddesign.png"
+    "creative": "artdrawingandpainting.png",
+    "business": "businessadvice.png",
+    "writing": "creativewriting.png",
+    "food": "drinkandfood.png",
+    "education": "educationandlearning.png",
+    "film": "filmvideoandacting.png",
+    "handyman": "handyman.png",
+    "music": "musiclessons.png",
+    "photography": "photographylessons.png",
+    "technology": "techcodinganddesign.png"
   }
     
 end

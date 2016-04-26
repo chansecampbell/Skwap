@@ -129,17 +129,46 @@ u14.photo = Rails.root.join("app/assets/images/roxanne.jpeg").open
 u14.save!
 
 
+s1 = u1.skills.create!(title: "Ukulele Lessons",
+                       description: "I'm a fairly experienced musician having played multiple instruments since the age of 9. I've noticed a rise in popularity for one of my favourite instruments, the Ukulele, so I thought I would offer some 1 hour lessons for anyone who's wanting to pick one up or learn some new tricks.",
+                        response_time: "3-4 hours",
+                        location: "East London",
+                        category: "music",
+                        availability: "Evening")
 
+c1 = Connection.create!(skill_id: s1.id,
+                         meetup_time: Time.now + 1.week.to_i,
+                         details: "Hi mate, can we do this at around 6pm on the day?",
+                         sender_id: u6.id,
+                         receiver_id: u1.id)
 
-# s1 = u1.skills.create!(title: "Ukulele Lesson Beginner/Intermediate ",
-#                          description: "I'm a fairly experienced musician having played multiple instruments since the age of 9. I've noticed a rise in popularity for one of my favourite instruments, the Ukulele, so I thought I would offer some 1 hour lessons for anyone who's wanting to pick one up or learn some new tricks.",
-#                          response_time: "Within 3 hours",
-#                          location: "East London",
-#                          category: "Music",
-#                          availability: "Evening")
+s2 = u1.skills.create!(title: "Front-end Coding Mentor",
+                       description: "I'm currently learning to be a Junior Web Developer at General Assembly and have put hundreds of hours into learning to code in the front and back end. I can give beginners some basic front-end coding advice and mentorship.",
+                        response_time: "3-4 hours",
+                        location: "East London",
+                        category: "technology",
+                        availability: "Morning")
 
-# c1 = Connection.create!(skill_id: s1.id,
+c2 = Connection.create!(skill_id: s2.id,
+                         meetup_time: Time.now + 1.week.to_i,
+                         details: "Hey, I'm currently trying to learn a bit online on Codecademy but I need a bit of extra guidance.",
+                         sender_id: u5.id,
+                         receiver_id: u1.id)
+
+s3 = u9.skills.create!(title: "Gym Buddy/Mentor",
+                       description: "I'm a part-time personal training willing to share my excercise and dietry knowledge by coming and buddying up with you for a gym session!",
+                        response_time: "Couple of hours",
+                        location: "North London",
+                        category: "education",
+                        availability: "Morning")
+
+# c3 = Connection.create!(skill_id: s2.id,
 #                          meetup_time: Time.now + 1.week.to_i,
-#                          details: "Can we do this at around 6pm on the day?",
-#                          sender_id: u2.id,
+#                          details: "Hey, I'm currently trying to learn a bit online on Codecademy but I need a bit of extra guidance.",
+#                          sender_id: u5.id,
 #                          receiver_id: u1.id)
+
+
+
+
+
