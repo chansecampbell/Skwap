@@ -38,7 +38,7 @@ end
     @private_users = [@connection.sender_id, @connection.receiver_id]
 
     if !@private_users.include? current_user.id
-            redirect_to skills_path
+            redirect_to skills_path(:anchor => "learn")
             flash[:danger] = "You can't be on this page!"
 
     end
@@ -53,7 +53,7 @@ end
     @sender = User.where(id: @connection.sender_id)
     if @sender.first.credits == 0
     flash[:danger] = "The user doesn't have enough credits left to currently do this!"
-    redirect_to :back
+    redirect_to new_skill_path(:anchor => "user-listings")
     else
      @connection.accept!
      flash[:success] = "You accepted a connection!"

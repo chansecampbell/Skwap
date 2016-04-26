@@ -5,53 +5,44 @@
 <div class="tabs-content">
   <div class="content" id="learn">
    <h3>All Skills</h3>
-
    <%#= @categories %>
-
-   <%= search_form_for @q do |f| %>
-     <p>
-       <%= f.label :location_cont %>
-       <%= f.text_field :location_cont %>
-     </p>
-     <p>
-       <%= f.label :category_cont %>
-       <%= f.text_field :category_cont %>
-     </p>
-     <p>
-       <%= f.submit %>
-     </p>
-   <% end %>
-
-
-   <span><%= sort_link @q, :title %></span>
-
-   <%= render @skills %>
-  </div>
-  <div class="content" id="user-learnings">
-  <li><%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %></li>
-  <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
-  <li><strong>Credits:</strong> <%= current_user.credits %></li>
-  <p><h3>My Learnings</h3></p>
-   <% @connections.each do |connection| %>
-   <% if current_user.id == connection.sender_id %>
-   <li><strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
-   <%  users = User.where(id: connection.receiver_id) %>
-   <% users.each do |user| %>
-   <li><strong>Master:</strong> <%= user.first_name %></li>
-   <% end %>
-   <li><strong>Lesson status:</strong> <%= connection.status %></li>
-   <% if connection.status == "Pending" %>
-   <li><%= link_to "Cancel", cancel_connection_path(connection) %></li>
-   <% else %>
-   <li>You can no longer change your request status</li>
-   <% end %>
-   <% end %>
+     <%= search_form_for @q do |f| %>
+       <p>
+         <%= f.label :location_cont %>
+         <%= f.text_field :location_cont %>
+       </p>
+       <p>
+         <%= f.label :category_cont %>
+         <%= f.text_field :category_cont %>
+       </p>
+       <p>
+         <%= f.submit %>
+       </p>
      <% end %>
+     <span><%= sort_link @q, :title %></span>
+     <%= render @skills %>
+    </div>
 
-
-
- 
-
+  <div class="content" id="user-learnings">
+    <li><%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %></li>
+    <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+    <li><strong>Credits:</strong> <%= current_user.credits %></li>
+    <p><h3>My Learnings</h3></p>
+      <% @connections.each do |connection| %>
+      <% if current_user.id == connection.sender_id %>
+      <li><strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
+      <%  users = User.where(id: connection.receiver_id) %>
+      <% users.each do |user| %>
+      <li><strong>Master:</strong> <%= user.first_name %></li>
+     <% end %>
+   <li><strong>Lesson status:</strong> <%= connection.status %></li>
+     <% if connection.status == "Pending" %>
+     <li><%= link_to "Cancel", cancel_connection_path(connection) %></li>
+     <% else %>
+     <li>You can no longer change your request status</li>
+     <% end %>
+     <% end %>
+   <% end %>
   </div>
 </div>
 
