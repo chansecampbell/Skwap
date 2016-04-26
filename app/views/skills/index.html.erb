@@ -4,30 +4,57 @@
 </ul>
 <div class="tabs-content">
   <div class="content" id="learn">
-   <h3>All Skills</h3>
+
+  <div class="row">
+        <div class="medium-8 columns medium-centered"> 
    <%#= @categories %>
      <%= search_form_for @q do |f| %>
-       <p>
          <%= f.label :location_cont %>
          <%= f.text_field :location_cont %>
-       </p>
-       <p>
+       </div>
+       </div>
+   <div class="row">
+         <div class="medium-8 columns medium-centered">
          <%= f.label :category_cont %>
          <%= f.text_field :category_cont %>
-       </p>
-       <p>
+    </div>
+    </div>
+    <div class="row">
+          <div class="medium-8 columns medium-centered">
          <%= f.submit %>
-       </p>
+         </div>
+         </div>
      <% end %>
-     <span><%= sort_link @q, :title %></span>
+     <!-- <span><#%= sort_link @q, :title %></span> -->
+     <div class="row">
+           <div class="medium-8 columns medium-centered">
      <%= render @skills %>
+     </div>
+    </div>
+
     </div>
 
   <div class="content" id="user-learnings">
-    <li><%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %></li>
+  <div class="row">
+        <div class="medium-8 columns medium-centered">
+    <%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %>
+    </div>
+    </div>
+    <div class="row">
+          <div class="medium-8 columns medium-centered">
     <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+    </div>
+    </div>
+    <div class="row">
+          <div class="medium-8 columns medium-centered">
     <li><strong>Credits:</strong> <%= current_user.credits %></li>
-    <p><h3>My Learnings</h3></p>
+    </div>
+    </div>
+    <div class="row">
+          <div class="medium-8 columns medium-centered">
+    <h3>My Learnings</h3>
+    </div>
+    </div>
       <% @connections.each do |connection| %>
       <% if current_user.id == connection.sender_id %>
       <li><strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
@@ -44,7 +71,6 @@
      <% end %>
    <% end %>
   </div>
-</div>
 
 
 

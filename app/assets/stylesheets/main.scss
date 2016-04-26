@@ -1,5 +1,6 @@
 body {
   list-style-type: none;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 a {
@@ -20,7 +21,7 @@ width: 100%;
 
 height: 40px; /* choose any height */
 
-background-color: #1E88E5; //#FFCC2F;
+background-color: #651FFF; //#FFCC2F;
 color: #fff;
 }
 
@@ -30,9 +31,14 @@ color: #fff;
 }
 
 // header text
+
+.name h1 {
+  // font-family: 'Ubuntu', sans-serif;
+}
+
 .personal-header {
   font-size: 0.5em;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   list-style-type: none;
   font-weight: bolder;
   text-transform: uppercase;
