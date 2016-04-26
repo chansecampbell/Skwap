@@ -52,6 +52,8 @@ end
  def accept
      @connection.accept!
      flash[:success] = "You accepted a connection!"
+     @sender = User.where(id: @connection.sender_id)
+     @sender.first.decrement!(:credits)
      redirect_to :back
  end
 
@@ -69,14 +71,10 @@ end
 
  def complete
     @connection = Connection.find(params[:id])
-    @sender = User.where(id: @connection.sender_id)
      @connection.complete!
      flash[:info] = "You completed a connection!"
      # @user = User.where(id: @connection.receiver_id)
      current_user.increment!(:credits)
-     @sender.first.decrement!(:credits)
-     puts "************************************"
-     puts @sender.first.inspect
      redirect_to :back
  end
 

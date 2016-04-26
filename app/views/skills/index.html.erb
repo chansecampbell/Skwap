@@ -37,7 +37,11 @@
    <li><strong>Master:</strong> <%= user.first_name %></li>
    <% end %>
    <li><strong>Lesson status:</strong> <%= connection.status %></li>
+   <% if connection.status == "Pending" %>
    <li><%= link_to "Cancel", cancel_connection_path(connection) %></li>
+   <% else %>
+   <li>You can no longer change your request status</li>
+   <% end %>
    <% end %>
      <% end %>
 

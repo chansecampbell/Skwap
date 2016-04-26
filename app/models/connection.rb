@@ -25,6 +25,6 @@ class Connection < ActiveRecord::Base
 
   private
       def add_default_status
-          self.status = "pending" if self.status.nil?
+          self.status = "Pending" if self.status.nil?
       end
 end
