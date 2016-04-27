@@ -31,10 +31,34 @@
       </div>
 
       <div class="content" id="user-learnings">
+
+
+       <div class="row">
+         <div class="medium-12 columns">
+           <div class="card">
+           <div class="row">
+           <div class="medium-6 columns">
+              <%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %>
+              </div>
+              <div class="medium-3 columns">
+               <span><%= current_user.first_name %> <%= current_user.last_name %></span>
+                </div>
+                <div class="medium-3 columns">
+                  <span><strong>Credits:</strong> <%= current_user.credits %></span>
+                  </div>
+                 </div>
+              </div>
+           
+            </div>
+            </div>
+     
+
         <%= render "learn" %>
-    </div>
+  
 
    </div>
+ </div>
+ </div>
  </div>
  </div>
 
