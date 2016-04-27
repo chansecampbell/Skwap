@@ -1,29 +1,23 @@
-<% if current_user.id != skill.user.id %>
-<div class="row">
-  <div class="medium-12 columns medium-centered">
-  <h1><%= link_to skill.title, skill %></h1>
-  </div>
-  </div>
-  <div class="row">
-    <div class="medium-6 columns" data-equalizer-watch>
-    <li><strong>Location:</strong> <%= skill.location %></li>
-    </div>
-    <div class="medium-6 columns" data-equalizer-watch>
-    <li><strong>Posted by:</strong> <%= skill.user.first_name %></li>
-    </div>
-    </div>
-  <div class="row" data-equalizer>
-    <div class="medium-6 columns" data-equalizer-watch>
-  <li><strong>Response time:</strong> <%= skill.response_time %></li>
-  </div>
-    <div class="medium-6 columns" data-equalizer-watch>
-  <li><strong>Availability:</strong> <%= skill.availability %></li>
-  </div>
-  </div>
-  <div class="row" data-equalizer>
-  <div class="medium-12 columns medium-centered" data-equalizer-watch>
-  <li><strong>Category:</strong> <%= skill.category %></li>
+  <% @skills.in_groups_of(2) do |group| %>
+    <div class="row" data-equalizer>
+    <% group.compact.each do |skill| %>
+    <% if current_user.id != skill.user.id %>
+  <div class="medium-6 columns">
+    <div class="card" data-equalizer-watch>
+      <div class="content">
+        <li><strong>Category:</strong> <%= skill.category %></li>
+
+        <span class="title"><%= link_to skill.title, skill %></span>
+
+
+        <li><strong>Location:</strong> <%= skill.location %></li>
+        <li><strong>Posted by:</strong> <%= skill.user.first_name %></li>
+        <li><strong>Response time:</strong> <%= skill.response_time %></li>
+        <li><strong>Availability:</strong> <%= skill.availability %></li>
+      </div>
     </div>
   </div>
-    <% end %>
-  
+  <% end %>
+  <% end %>
+</div>
+<% end %>

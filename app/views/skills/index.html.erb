@@ -1,76 +1,82 @@
-<ul class="tabs" data-tab data-options="scroll_to_content: false">
-  <li class="tab-title"><a href="#learn">Learn a skill</a></li>
-  <li class="tab-title"><a href="#user-learnings"><%= current_user.first_name %>'s learnings</a></li>
-</ul>
-<div class="tabs-content">
-  <div class="content" id="learn">
+<!-- Wraps the entire page -->
+<div class="row">
+<div class="medium-10 columns medium-centered">
 
-  <div class="row">
-        <div class="medium-8 columns medium-centered"> 
-   <%#= @categories %>
-     <%= search_form_for @q do |f| %>
-         <%= f.label :location_cont %>
-         <%= f.text_field :location_cont %>
-       </div>
-       </div>
-   <div class="row">
-         <div class="medium-8 columns medium-centered">
-         <%= f.label :category_cont %>
-         <%= f.text_field :category_cont %>
-    </div>
-    </div>
-    <div class="row">
-          <div class="medium-8 columns medium-centered">
-         <%= f.submit %>
-         </div>
-         </div>
-     <% end %>
-     <!-- <span><#%= sort_link @q, :title %></span> -->
-     <div class="row">
-           <div class="medium-8 columns medium-centered">
-     <%= render @skills %>
-     </div>
-    </div>
+  <ul class="tabs" data-tab data-options="scroll_to_content: false">
+    <li class="tab-title"><a href="#learn">Learn a skill</a></li>
+    <li class="tab-title"><a href="#user-learnings"><%= current_user.first_name %>'s learnings</a></li>
+  </ul>
+  <div class="tabs-content">
+    <div class="content" id="learn">
+
+        <div class="row" data-equalizer>
+          <%#= @categories %>
+          <%= search_form_for @q do |f| %>
+          <div class="medium-5 columns">
+          <%= f.label :location_cont %>
+          <%= f.text_field :location_cont %>
+          </div>
+          <div class="medium-5 columns">
+          <%= f.label :category_cont %>
+          <%= f.text_field :category_cont %>
+          </div>
+          <div class="medium-2 columns">
+          <%= f.submit "Submit", class: "button" %>
+          </div>
+
+          <% end %>
+        </div>
+      
+      <!-- <span><#%= sort_link @q, :title %></span> -->
+
+      <%= render "skill" %>
+
 
     </div>
 
-  <div class="content" id="user-learnings">
-  <div class="row">
-        <div class="medium-8 columns medium-centered">
-    <%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %>
+
+
+
+    <div class="content" id="user-learnings">
+      <div class="row">
+        <div class="medium-6 columns medium-centered">
+          <div class="card">
+            <div class="image">
+             <%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %>
+             <span class="title"><%= current_user.first_name %> <%= current_user.last_name %></span>
+           </div>
+           <div class="content">
+            <h3>My Learnings</h3>
+
+            <% @connections.each do |connection| %>
+            <% if current_user.id == connection.sender_id %>
+            <li><strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
+            <%  users = User.where(id: connection.receiver_id) %>
+            <% users.each do |user| %>
+            <li><strong>Master:</strong> <%= user.first_name %></li>
+            <% end %>
+            <li><strong>Lesson status:</strong> <%= connection.status %></li>
+            <% if connection.status == "Pending" %>
+            <li><%= link_to "Cancel", cancel_connection_path(connection) %></li>
+            <% else %>
+            <li>You can no longer change your request status</li>
+            <% end %>
+            <% end %>
+            <% end %>
+          </div>
+          <div class="action">
+            <a href='#'><strong>Credits:</strong> <%= current_user.credits %></a>
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
-    </div>
-    <div class="row">
-          <div class="medium-8 columns medium-centered">
-    <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
-    </div>
-    </div>
-    <div class="row">
-          <div class="medium-8 columns medium-centered">
-    <li><strong>Credits:</strong> <%= current_user.credits %></li>
-    </div>
-    </div>
-    <div class="row">
-          <div class="medium-8 columns medium-centered">
-    <h3>My Learnings</h3>
-    </div>
-    </div>
-      <% @connections.each do |connection| %>
-      <% if current_user.id == connection.sender_id %>
-      <li><strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
-      <%  users = User.where(id: connection.receiver_id) %>
-      <% users.each do |user| %>
-      <li><strong>Master:</strong> <%= user.first_name %></li>
-     <% end %>
-   <li><strong>Lesson status:</strong> <%= connection.status %></li>
-     <% if connection.status == "Pending" %>
-     <li><%= link_to "Cancel", cancel_connection_path(connection) %></li>
-     <% else %>
-     <li>You can no longer change your request status</li>
-     <% end %>
-     <% end %>
-   <% end %>
   </div>
 
 
+</div>
+</div>
+</div>
 

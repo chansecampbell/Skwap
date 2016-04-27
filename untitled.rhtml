@@ -5,14 +5,12 @@
   <li class="name">
   <h1 id="title-name"><%= link_to "Skwap", root_path %></h1>
   </li>
-  <li class="name">
     <% current_uri = request.env['PATH_INFO'] %>
     <% if current_uri == skills_path %>
       <span class="title-secondary-name"><%= link_to "learn", root_path %></span>
       <% elsif current_uri == new_skill_path %>
       <span class="title-secondary-name"><%= link_to "share", root_path %></span>
       <% end %>
-      </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
   </ul>
@@ -42,3 +40,4 @@
   </section>
 </nav>
 </header>
+
