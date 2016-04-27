@@ -1,59 +1,57 @@
-<h3>New Connection Request...</h3>
-<h3><%= @skill.title %></h3>
-<%= form_for [@skill, @connection] do |f| %>
-  <% if @connection.errors.any? %>
-    <% for message in @connection.errors.full_messages %>
-      <div class="alert alert-danger" role="alert">
-        <%= message %>
-      </div>
-    <% end %>
-  <% end %>
-
-  <div class="row" data-equalizer>
-    <div class="medium-12 columns" data-equalizer-watch>
-  <div class="field">
-    <%= f.text_area :details, placeholder: "Connection Message.." %>
-  </div>
-    </div>
-   </div>
+<div class="row main-row">
+  <div class="medium-10 columns medium-centered">
 
     <div class="row" data-equalizer>
-      <div class="medium-12 columns" data-equalizer-watch>
-    <div class="field">
-    <%= f.date_field :meetup_time %>
-    </div>
-      </div>
-    </div>
-
-  <div class="row" data-equalizer>
-    <div class="medium-12 columns" data-equalizer-watch>
-  <div class="field">
-  <div class="actions">
-    <%= f.submit "Connect" %>
-  </div>
-  </div>
-  </div>
-
-<% end %>
-
+      <div class="medium-12 columns">
+        <div class="card" data-equalizer-watch>
+        <div class="content">
+        <h1>Let's get connected</h1>
+        </div>
+        </div>
+        </div>
+        </div>
 
     <div class="row" data-equalizer>
-  <div class="medium-12 columns">
-    <div class="card" data-equalizer-watch>
-      <div class="content">
-        <li><strong>Category:</strong> <%= @skill.category %></li>
+      <div class="medium-12 columns">
+        <div class="card" data-equalizer-watch>
+          <div class="content">
 
-        <span class="title"><%= @skill.title %></span>
+            <div class="row" data-equalizer>
+              <div class="medium-12 columns" data-equalizer-watch>
+                <h1><strong>Lesson:</strong> <%= @skill.title %></h1>
+              </div>
+            </div>
+
+            <li><strong>Category:</strong> <%= @skill.category %></li>
+            <li><strong>Location:</strong> <%= @skill.location %></li>
+            <li><strong>Availability:</strong> <%= @skill.availability %></li>
+            <li><strong>Posted by:</strong> <%= @skill.user.first_name %></li>
+            <li><strong>Response time:</strong> <%= @skill.response_time %></li>
+            <li><strong>Description:</strong> <%= @skill.description %></li>
+
+            <%= form_for [@skill, @connection] do |f| %>
+            <% if @connection.errors.any? %>
+            <% for message in @connection.errors.full_messages %>
+            <div class="alert alert-danger" role="alert">
+              <%= message %>
+            </div>
+            <% end %>
+            <% end %>
 
 
-        <li><strong>Location:</strong> <%= @skill.location %></li>
-        <li><strong>Availability:</strong> <%= @skill.availability %></li>
-        <li><strong>Posted by:</strong> <%= @skill.user.first_name %></li>
-        <li><strong>Response time:</strong> <%= @skill.response_time %></li>
-        <li><strong>Description:</strong> <%= @skill.description %></li>
-        <li><%= link_to "Connect", new_skill_connection_path(@skill), class: "button" %></li>
-        <li><%= link_to "Back", :back, class: "button" %></li>
+            <%= f.text_area :details, placeholder: "Connection Message.." %>
+
+            <%= f.date_field :meetup_time %>
+
+
+            <% end %>
+            <li><%= link_to "Connect", new_skill_connection_path(@skill), class: "button" %></li>
+            <li><%= link_to "Back", :back, class: "button" %></li>
+
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
