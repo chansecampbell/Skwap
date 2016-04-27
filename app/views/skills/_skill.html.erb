@@ -1,8 +1,8 @@
-  <% @skills.in_groups_of(2) do |group| %>
+  <% @skills.in_groups_of(1) do |group| %>
     <div class="row" data-equalizer>
     <% group.compact.each do |skill| %>
     <% if current_user.id != skill.user.id %>
-  <div class="medium-6 columns">
+  <div class="medium-12 columns">
     <div class="card" data-equalizer-watch>
       <div class="content">
         <li><strong>Category:</strong> <%= skill.category %></li>
