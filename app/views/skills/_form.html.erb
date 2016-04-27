@@ -1,10 +1,6 @@
 <%= form_for(@skill) do |f| %>
   <%= f.text_field :title, placeholder: "Title", autofocus: true %>
-  <li>Category:</li>
-  <% @categories.each do |category, value| %>
-    <input type="radio" id="<%= category %>" name="skill[category]"></input>
-    <label for="<%= category %>" class="label-icon" style="background-image: url('/assets/<%= value %>');"></label>
-  <% end %>
+  <%= f.select :availability, ['Creative Arts', 'Business & Work', 'Writing', 'Cooking', 'Education', 'Film & Acting', 'Handyman', 'Music & Instruments', 'Photography & Design', 'Tech & Coding', 'Sports & Gym Training'], autofocus: true %>
   <%= f.text_area :description, placeholder: "Description", autofocus: true %>
   <%= f.select :location, ['North London', 'East London', 'South London', 'West London', 'Central London'], autofocus: true %>
   <%= f.select :availability, ['Morning', 'Afternoon', 'Evening'], autofocus: true %>

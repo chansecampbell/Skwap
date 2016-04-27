@@ -133,7 +133,7 @@ s1 = u1.skills.create!(title: "Ukulele Lessons",
                        description: "I'm a fairly experienced musician having played multiple instruments since the age of 9. I've noticed a rise in popularity for one of my favourite instruments, the Ukulele, so I thought I would offer some 1 hour lessons for anyone who's wanting to pick one up or learn some new tricks.",
                         response_time: "3-4 hours",
                         location: "East London",
-                        category: "music",
+                        category: "Music & Instruments",
                         availability: "Evening")
 
 c1 = Connection.create!(skill_id: s1.id,
@@ -146,7 +146,7 @@ s2 = u1.skills.create!(title: "Front-end Coding Mentor",
                        description: "I'm currently learning to be a Junior Web Developer at General Assembly and have put hundreds of hours into learning to code in the front and back end. I can give beginners some basic front-end coding advice and mentorship.",
                         response_time: "3-4 hours",
                         location: "East London",
-                        category: "technology",
+                        category: "Tech & Coding",
                         availability: "Morning")
 
 c2 = Connection.create!(skill_id: s2.id,
@@ -159,7 +159,7 @@ s3 = u9.skills.create!(title: "Gym Buddy/Mentor",
                        description: "I'm a part-time personal training willing to share my excercise and dietry knowledge by coming and buddying up with you for a gym session!",
                         response_time: "Couple of hours",
                         location: "North London",
-                        category: "education",
+                        category: "Sports & Gym Training",
                         availability: "Morning")
 
 c3 = Connection.create!(skill_id: s3.id,
@@ -184,7 +184,7 @@ s4 = u11.skills.create!(title: "Creative Writing Mentor",
                        description: "I'm a full time freelance writer and would love to help you with some writing techniques I've picked up over the years, whether you're a beginner or intermediate. Get in touch if you want to have a session.",
                         response_time: "Within an hour",
                         location: "West London",
-                        category: "writing",
+                        category: "Writing",
                         availability: "Afternoon")
 
 c6 = Connection.create!(skill_id: s4.id,
@@ -203,7 +203,7 @@ s5 = u6.skills.create!(title: "IT/Hardware Support Guy",
                        description: "I work as an IT consultant and am willing to spread a little knowledge by helping you out either at home or remotely with any computer troubles. I'm also willing to do some short tutorials on tech-related issues depending on your needs.",
                         response_time: "5-6 hours",
                         location: "East London",
-                        category: "technology",
+                        category: "Tech & Coding",
                         availability: "Evening")
 
 c8 = Connection.create!(skill_id: s5.id,
@@ -216,7 +216,7 @@ s6 = u7.skills.create!(title: "Photography 101",
                        description: "I'm a freelance photographer willing to share some tips of the trade and help people looking to master the use of a camera! I don't mind if it's a DSLR or even an iPhone, if you want a bit of guidance with angles and lighting then I'm your girl.",
                         response_time: "5-6 hours",
                         location: "East London",
-                        category: "photography",
+                        category: "Photography & Design",
                         availability: "Morning")
 
 c8 = Connection.create!(skill_id: s6.id,
@@ -241,7 +241,7 @@ s7 = u12.skills.create!(title: "Cooking with John - Pasta 101",
                        description: "Hey everyone. I'm not sure if you've seen me about but I'm actually a bit of a big deal within the culinary world. If you're looking to improve your pasta cooking skills I'm willing to do a cooking lesson with you on any pasta dish! Yum!",
                         response_time: "Within a day",
                         location: "West London",
-                        category: "food",
+                        category: "Cooking",
                         availability: "Evening")
 
 c11 = Connection.create!(skill_id: s6.id,
@@ -256,11 +256,11 @@ c12 = Connection.create!(skill_id: s6.id,
                          sender_id: u4.id,
                          receiver_id: u12.id)
 
-s8 = u9.skills.create!(title: "Eating clean and keeping clean",
+s8 = u9.skills.create!(title: "Eating clean and staying lean",
                        description: "I'm a personal trainer willing to offer out my dietrition services to anyone who's looking to eat a little bit cleaner. My time of the day preffered is probably the morning, so shoot me a message if you want to get some guidance!",
                         response_time: "Couple of hours",
                         location: "North London",
-                        category: "food",
+                        category: "Cooking",
                         availability: "Morning")
 
 c13 = Connection.create!(skill_id: s8.id,
@@ -274,4 +274,6 @@ c14 = Connection.create!(skill_id: s8.id,
                          details: "Hey are you able to offer some dietry plans this week? Would be keen for a session ASAP as I've just signed up to a new gym in the area.",
                          sender_id: u2.id,
                          receiver_id: u9.id)
+
+# ['Creative Arts', 'Business & Work', 'Writing', 'Cooking', 'Education', 'Film & Acting', 'Handyman', 'Music & Instruments', 'Photography & Design', 'Tech & Coding', 'Sports & Gym Training']
 

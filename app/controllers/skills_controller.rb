@@ -5,13 +5,11 @@ class SkillsController < ApplicationController
     @q = Skill.search(params[:q])
     @skills = @q.result(distinct: true)
     @connections = Connection.all
-    @categories = Skill::CATEGORIES
   end
 
   def new
     @skill = Skill.new
     @connections = Connection.all
-    @categories = Skill::CATEGORIES
   end
 
   def show
@@ -30,7 +28,6 @@ class SkillsController < ApplicationController
 
   def edit
     @skill = Skill.find(params[:id])
-    @categories = Skill::CATEGORIES
   end
 
   def update

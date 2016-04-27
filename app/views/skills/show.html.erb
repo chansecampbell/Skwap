@@ -2,9 +2,9 @@
   <div class="medium-12 columns">
     <div class="card" data-equalizer-watch>
       <div class="content">
-        <li><strong>Category:</strong> <%= @skill.category %></li>
-
         <span class="title"><%= @skill.title %></span>
+        <li><%= link_to image_tag(@skill.user.photo.thumb.url), @skill.user.photo.url %></li>
+
 
 
         <li><strong>Location:</strong> <%= @skill.location %></li>
@@ -13,7 +13,7 @@
         <li><strong>Response time:</strong> <%= @skill.response_time %></li>
         <li><strong>Description:</strong> <%= @skill.description %></li>
         <li><%= link_to "Connect", new_skill_connection_path(@skill), class: "button" %></li>
-        <li><%= link_to "Back", :back, class: "button" %></li>
+        <li><%= link_to 'Back', skills_path(:anchor => "learn") %></li>
       </div>
     </div>
   </div>
