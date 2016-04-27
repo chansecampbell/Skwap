@@ -1,43 +1,56 @@
-<ul class="tabs" data-tab data-options="scroll_to_content: false">
-  <li class="tab-title"><a href="#share">Share a skill</a></li>
-  <li class="tab-title"><a href="#user-listings"><%= current_user.first_name %>'s listings</a></li>
-</ul>
-<div class="tabs-content">
-  <div class="content" id="share-content">
-    <%= render "form" %>
-  </div>
+<!-- Wraps the entire page -->
+<div class="row main-row">
+  <div class="medium-10 columns medium-centered">
 
-  <div class="content" id="user-listings-content">
-    <li><%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %></li>
-    <!-- <li><%#= image_tag("handyman.png") %></li> -->
-    <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
-    <li><strong>Credits:</strong> <%= current_user.credits %></li>
-  
-    <h3>My Listings</h3>
-    <% current_user.skills.each do |skill| %>
-      <li><strong><%= link_to skill.try(:title), edit_skill_path(skill) %></strong></li>
-    <% end %>
-   
-    <h3>My Padawans</h3>
-    <% @connections.each do |connection| %>
-      <% if current_user.id == connection.receiver_id %>
-        <li><strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
-      <% users = User.where(id: connection.sender_id) %>
-      
-      <% users.each do |user| %>
-        <li><strong>Padawan:</strong> <%= user.first_name %></li>
-      <% end %>
-      
-      <li><strong>Lesson status:</strong> <%= connection.status %></li>
-      <% if connection.status == "Pending" %>
-        <li><%= link_to "Accept", accept_connection_path(connection) %></li>
-        <li><%= link_to "Decline", reject_connection_path(connection) %></li>
-      <% elsif connection.status == "Declined" %>
-        <li>You declined this connection</li>
-      <% elsif connection.status == "Accepted" && connection.meetup_time.past? %>
-        <li><%= link_to "Complete", complete_connection_path(connection) %></li>
-      <% end %>
-    <% end %>
-   <% end %>
+    <ul class="tabs" data-tab data-options="scroll_to_content: false">
+      <li class="tab-title"><a href="#share">Share a skill</a></li>
+      <li class="tab-title"><a href="#user-listings"><%= current_user.first_name %>'s listings</a></li>
+    </ul>
+
+    <div class="tabs-content">
+
+      <div class="content" id="share-content">
+      <div class="row">
+        <div class="medium-12 columns">
+        <li><%= image_tag("/assets/running-pair.jpg") %></li>
+        </div>
+        </div>
+        <%= render "form" %>
+
+        <% current_user.skills.each do |skill| %>
+        <div class="row">
+          <div class="medium-12 columns">
+          <div class="card">
+        <li><strong><%= link_to skill.try(:title), edit_skill_path(skill) %></strong></li>
+        </div>
+        </div>
+        </div>
+        <% end %>
+      </div>
+
+      <div class="content" id="user-listings-content">
+     
+     <div class="row">
+       <div class="medium-12 columns">
+         <div class="card">
+         <div class="row">
+         <div class="medium-3 columns">
+            <%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %>
+            </div>
+            <div class="medium-9 columns">
+             <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
+                <h1><strong>Credits:</strong> <%= current_user.credits %></h1>
+                </div>
+               </div>
+            </div>
+         
+          </div>
+          </div>
+          <%= render "share" %>
+      </div>
+
+
+    </div>
+
   </div>
 </div>
