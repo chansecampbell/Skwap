@@ -8,9 +8,9 @@
   <li class="name">
     <% current_uri = request.env['PATH_INFO'] %>
     <% if current_uri == skills_path %>
-      <span class="title-secondary-name"><%= link_to "learn", root_path %></span>
+      <span class="title-secondary-name">learn</span>
       <% elsif current_uri == new_skill_path %>
-      <span class="title-secondary-name"><%= link_to "share", root_path %></span>
+      <span class="title-secondary-name">share</span>
       <% end %>
       </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
