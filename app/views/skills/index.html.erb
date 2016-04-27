@@ -10,21 +10,19 @@
     <div class="tabs-content">
 
       <div class="content" id="learn-content">
-      <div class="row">
-        <div class="medium-12 columns">
-        <li><%= image_tag("/assets/running-pair.jpg") %></li>
-        </div>
+        <div class="row">
+          <div class="medium-12 columns">
+            <li><%= image_tag("/assets/running-pair.jpg") %></li>
+          </div>
         </div>
         <div class="row" data-equalizer>
           <%#= @categories %>
           <%= search_form_for @q do |f| %>
           <div class="medium-5 columns">
-            <%= f.label :location_cont %>
-            <%= f.text_field :location_cont %>
+            <%= f.text_field :location_cont, placeholder: "Search for a location" %>
           </div>
           <div class="medium-5 columns">
-            <%= f.label :category_cont %>
-            <%= f.text_field :category_cont %>
+            <%= f.text_field :category_cont, placeholder: "Search for a category" %>
           </div>
           <div class="medium-2 columns">
             <%= f.submit "Submit", class: "button" %>
@@ -40,29 +38,29 @@
        <div class="row">
          <div class="medium-12 columns">
            <div class="card">
-           <div class="row">
-           <div class="medium-3 columns">
-              <%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %>
+             <div class="row">
+               <div class="medium-3 columns">
+                <%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %>
               </div>
               <div class="medium-9 columns">
                <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
-                  <h1><strong>Credits:</strong> <%= current_user.credits %></h1>
-                  </div>
-                 </div>
-              </div>
-           
-            </div>
-            </div>
+               <h1><strong>Credits:</strong> <%= current_user.credits %></h1>
+             </div>
+           </div>
+         </div>
+         
+       </div>
+     </div>
      
 
-        <%= render "learn" %>
-  
+     <%= render "learn" %>
+     
 
    </div>
  </div>
- </div>
- </div>
- </div>
+</div>
+</div>
+</div>
 
 <script>
   $(document).ready(function() {

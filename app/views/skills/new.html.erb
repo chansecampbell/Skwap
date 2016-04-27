@@ -10,47 +10,47 @@
     <div class="tabs-content">
 
       <div class="content" id="share-content">
-      <div class="row">
-        <div class="medium-12 columns">
-        <li><%= image_tag("/assets/running-pair.jpg") %></li>
-        </div>
+        <div class="row">
+          <div class="medium-12 columns">
+            <li><%= image_tag("/assets/running-pair.jpg") %></li>
+          </div>
         </div>
         <%= render "form" %>
 
         <% current_user.skills.each do |skill| %>
         <div class="row">
           <div class="medium-12 columns">
-          <div class="card">
-        <li><strong><%= link_to skill.try(:title), edit_skill_path(skill) %></strong></li>
-        </div>
-        </div>
+            <div class="card">
+              <li><strong><%= link_to skill.try(:title), edit_skill_path(skill) %></strong></li>
+            </div>
+          </div>
         </div>
         <% end %>
       </div>
 
       <div class="content" id="user-listings-content">
-     
-     <div class="row">
-       <div class="medium-12 columns">
-         <div class="card">
-         <div class="row">
-         <div class="medium-3 columns">
-            <%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %>
-            </div>
-            <div class="medium-9 columns">
-             <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
-                <h1><strong>Credits:</strong> <%= current_user.credits %></h1>
-                </div>
-               </div>
-            </div>
+       
+       <div class="row">
+         <div class="medium-12 columns">
+           <div class="card">
+             <div class="row">
+               <div class="medium-3 columns">
+                <%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %>
+              </div>
+              <div class="medium-9 columns">
+               <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
+               <h1><strong>Credits:</strong> <%= current_user.credits %></h1>
+             </div>
+           </div>
+         </div>
          
-          </div>
-          </div>
-          <%= render "share" %>
-      </div>
+       </div>
+     </div>
+     <%= render "share" %>
+   </div>
 
 
-    </div>
+ </div>
 
-  </div>
+</div>
 </div>

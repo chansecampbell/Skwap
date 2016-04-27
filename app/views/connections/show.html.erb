@@ -14,14 +14,14 @@
 <%  @user = User.where(id: @connection.sender_id) %>
 <% @user.each do |user| %>
 <p><li><strong><%= user.first_name %> says:</strong> <%= @connection.details %></li>
-<% end %>
-<%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @connection } %>
-<%= render partial: 'comments/form', locals: { commentable: @connection } %></p>
+  <% end %>
+  <%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @connection } %>
+  <%= render partial: 'comments/form', locals: { commentable: @connection } %></p>
 
-<% if current_user.id == @connection.sender_id %>
-<p><li><%= link_to 'Back', skills_path(:anchor => "user-learnings") %></li></p>
-<% elsif current_user.id == @connection.receiver_id %>
-<p><li><%= link_to 'Back', new_skill_path(:anchor => "user-listings") %></li></p>
-<% end %>
+  <% if current_user.id == @connection.sender_id %>
+  <p><li><%= link_to 'Back', skills_path(:anchor => "user-learnings") %></li></p>
+  <% elsif current_user.id == @connection.receiver_id %>
+  <p><li><%= link_to 'Back', new_skill_path(:anchor => "user-listings") %></li></p>
+  <% end %>
 
 
