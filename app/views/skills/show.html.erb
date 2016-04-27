@@ -2,23 +2,19 @@
   <div class="medium-12 columns">
     <div class="card" data-equalizer-watch>
       <div class="content">
-        <li><strong>Category:</strong> <%= skill.category %></li>
+        <li><strong>Category:</strong> <%= @skill.category %></li>
 
-        <span class="title"><%= skill.title %></span>
+        <span class="title"><%= @skill.title %></span>
 
 
-        <li><strong>Location:</strong> <%= skill.location %></li>
-        <li><strong>Availability:</strong> <%= skill.availability %></li>
-        <li><strong>Posted by:</strong> <%= skill.user.first_name %></li>
-        <% current_uri = request.env['PATH_INFO'] %>
-        <% if current_uri != skills_path %>
-        <li><strong>Response time:</strong> <%= skill.response_time %></li>
-        <li><strong>Description:</strong> <%= skill.description %></li>
+        <li><strong>Location:</strong> <%= @skill.location %></li>
+        <li><strong>Availability:</strong> <%= @skill.availability %></li>
+        <li><strong>Posted by:</strong> <%= @skill.user.first_name %></li>
+        <li><strong>Response time:</strong> <%= @skill.response_time %></li>
+        <li><strong>Description:</strong> <%= @skill.description %></li>
         <li><%= link_to "Connect", new_skill_connection_path(@skill), class: "button" %></li>
         <li><%= link_to "Back", :back, class: "button" %></li>
-        <% end %>
       </div>
     </div>
   </div>
-  <% end %>
 </div>

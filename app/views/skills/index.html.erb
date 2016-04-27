@@ -9,7 +9,7 @@
 
     <div class="tabs-content">
 
-      <div class="content" id="learn">
+      <div class="content" id="learn-content">
       <div class="row">
         <div class="medium-12 columns">
         <li><%= image_tag("/assets/running-pair.jpg") %></li>
@@ -35,7 +35,7 @@
         <%= render @skills %>
       </div>
 
-      <div class="content" id="user-learnings">
+      <div class="content" id="user-learnings-content">
       <div class="row">
         <div class="medium-12 columns">
         <li><%= image_tag("/assets/gym-pair.jpg") %></li>
@@ -73,41 +73,13 @@
 
 <script>
   $(document).ready(function() {
+    if (location.search && location.pathname == "/skills") {
+      var anchorTagToSelect = $("a[href='#learn']")
+      var tabToSelect = anchorTagToSelect.parent();
+      tabToSelect.toggleClass("active");
 
-    location.hash = "learn";
-    var tabHash = location.hash;
-    $(tabHash).addClass("active");
-    var anchorTagToSelect = $("a[href='" + tabHash + "']")
-    anchorTagToSelect.parent().addClass("active");
-
-    // function fixTabs(callback) {
-    //   var tabHash = location.hash;
-    //   $(tabHash).toggleClass("active");
-    //   var anchorTagToSelect = $("a[href='" + tabHash + "']")
-    //   anchorTagToSelect.parent().toggleClass("active");
-    //   // callback();
-    // }
-     
-    // function scrollToTop() {
-    //   $('body').scrollTo('0px');
-    // }
-
-    // (function() {
-    //   fixTabs(scrollToTop);
-    // })();
-
-    $(".tab-title").click(function() {
-      var tab = $(this);
-      if (!tab.hasClass("active")) {
-        var anchor = tab.find("a"); 
-        location.href = $(anchor).attr("href");
-      }
-    })
-    // $("#skill_search").submit(function() {
-    //   // var tabHash = location.hash;
-    //   $("#learn").addClass("active");
-    //   var anchorTagToSelect = $("a[href='" + tabHash + "']")
-    //   anchorTagToSelect.parent().toggleClass("active");
-    // })
+      var contentToSelect = $("#learn-content");
+      contentToSelect.toggleClass("active");
+    }
   });
 </script>

@@ -3,11 +3,11 @@
   <li class="tab-title"><a href="#user-listings"><%= current_user.first_name %>'s listings</a></li>
 </ul>
 <div class="tabs-content">
-  <div class="content" id="share">
+  <div class="content" id="share-content">
     <%= render "form" %>
   </div>
 
-  <div class="content" id="user-listings">
+  <div class="content" id="user-listings-content">
     <li><%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %></li>
     <!-- <li><%#= image_tag("handyman.png") %></li> -->
     <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>

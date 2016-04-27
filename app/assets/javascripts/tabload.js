@@ -1,34 +1,23 @@
 // Error in Foundation jQuery code means tab not auto selected on page load, so had to write this
 
 $(document).ready(function() {
+
+  var anchorTagToSelect = $("a[href='" + location.hash + "']")
+  var tabToSelect = anchorTagToSelect.parent();
+  tabToSelect.toggleClass("active");
+
+  var contentToSelect = $(location.hash + "-content");
+  contentToSelect.toggleClass("active");
   
-  var tabHash = location.hash;
-  $(tabHash).addClass("active");
-  var anchorTagToSelect = $("a[href='" + tabHash + "']")
-  anchorTagToSelect.parent().toggleClass("active");
-
-  // function fixTabs(callback) {
-  //   var tabHash = location.hash;
-  //   $(tabHash).toggleClass("active");
-  //   var anchorTagToSelect = $("a[href='" + tabHash + "']")
-  //   anchorTagToSelect.parent().toggleClass("active");
-  //   // callback();
-  // }
-   
-  // function scrollToTop() {
-  //   $('body').scrollTo('0px');
-  // }
-
-  // (function() {
-  //   fixTabs(scrollToTop);
-  // })();
-
   $(".tab-title").click(function() {
+    var contentToDisable = $(".content.active");
+    contentToDisable.removeClass("active");
+
     var tab = $(this);
-    if (!tab.hasClass("active")) {
-      var anchor = tab.find("a"); 
-      location.href = $(anchor).attr("href");
-    }
+    var anchor = tab.find("a"); 
+    location.href = $(anchor).attr("href");
+    var contentToSelect = $(location.hash + "-content");
+    contentToSelect.addClass("active");
   })
 
 })
