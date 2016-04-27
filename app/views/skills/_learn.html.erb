@@ -1,30 +1,25 @@
-
-
-
-        <h3>My Learnings</h3>
-
         <% @connections.each do |connection| %>
         <div class="row">
-        <% if current_user.id == connection.sender_id %>
-        <div class="medium-12 columns">
-          <div class="card">
-          <div class="content">
-        <li><strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
-        <%  users = User.where(id: connection.receiver_id) %>
-        <% users.each do |user| %>
-        <li><strong>Master:</strong> <%= user.first_name %></li>
-        <% end %>
-        <li><strong>Lesson status:</strong> <%= connection.status %></li>
-        <% if connection.status == "Pending" %>
-        <li><%= link_to "Cancel", cancel_connection_path(connection) %></li>
-        <% else %>
-        <li>You can no longer change your request status</li>
-        <% end %>
+          <% if current_user.id == connection.sender_id %>
+          <div class="medium-12 columns">
+            <div class="card">
+              <div class="content">
+                <li><strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
+                <%  users = User.where(id: connection.receiver_id) %>
+                <% users.each do |user| %>
+                <li><strong>Master:</strong> <%= user.first_name %></li>
+                <% end %>
+                <li><strong>Lesson status:</strong> <%= connection.status %></li>
+                <% if connection.status == "Pending" %>
+                <li><%= link_to "Cancel", cancel_connection_path(connection) %></li>
+                <% else %>
+                <li>You can no longer change your request status</li>
+                <% end %>
+              </div>
+            </div>
           </div>
-        </div>
-        </div>
-       
-        <% end %>
+          
+          <% end %>
         </div>
         <% end %>
 
