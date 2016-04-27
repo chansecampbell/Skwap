@@ -41,14 +41,12 @@
          <div class="medium-12 columns">
            <div class="card">
            <div class="row">
-           <div class="medium-6 columns">
+           <div class="medium-3 columns">
               <%= link_to image_tag(current_user.photo.thumb.url), current_user.photo.url %>
               </div>
-              <div class="medium-3 columns">
-               <span><%= current_user.first_name %> <%= current_user.last_name %></span>
-                </div>
-                <div class="medium-3 columns">
-                  <span><strong>Credits:</strong> <%= current_user.credits %></span>
+              <div class="medium-9 columns">
+               <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
+                  <h1><strong>Credits:</strong> <%= current_user.credits %></h1>
                   </div>
                  </div>
               </div>

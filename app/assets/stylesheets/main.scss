@@ -34,9 +34,35 @@ color: #fff;
   background-color: #E0E0E0;
 }
 
+
+
 .front-image {
-  border-bottom: 4px solid #333;
+display: none;
 }
+
+#sign-in {
+  position: relative;
+  background: white;
+  height: 250px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+
+@media (max-width: 640px) {
+  .front-image {
+    border-bottom: 4px solid #333;
+    display: initial;
+    position: relative;
+  }
+
+  #sign-in {
+    position: absolute;
+    background: white;
+    margin: 0;
+  }
+}
+
 // header text
 
 li.name {

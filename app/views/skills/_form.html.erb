@@ -1,9 +1,33 @@
 <%= form_for(@skill) do |f| %>
+<div class="row">
+  <div class="medium-12 columns">
   <%= f.text_field :title, placeholder: "Title", autofocus: true %>
-  <%= f.select :availability, ['Creative Arts', 'Business & Work', 'Writing', 'Cooking', 'Education', 'Film & Acting', 'Handyman', 'Music & Instruments', 'Photography & Design', 'Tech & Coding', 'Sports & Gym Training'], autofocus: true %>
-  <%= f.text_area :description, placeholder: "Description", autofocus: true %>
+  </div>
+  </div>
+  <div class="row">
+    <div class="medium-6 columns">
+  <%= f.select :category, ['Creative Arts', 'Business & Work', 'Writing', 'Cooking', 'Education', 'Film & Acting', 'Handyman', 'Music & Instruments', 'Photography & Design', 'Tech & Coding', 'Sports & Gym Training'], autofocus: true %>
+  </div>
+    <div class="medium-6 columns">
   <%= f.select :location, ['North London', 'East London', 'South London', 'West London', 'Central London'], autofocus: true %>
+  </div>
+  </div>
+  <div class="row">
+    <div class="medium-6 columns">
   <%= f.select :availability, ['Morning', 'Afternoon', 'Evening'], autofocus: true %>
+  </div>
+  <div class="medium-6 columns">
   <%= f.text_field :response_time, placeholder: "Response Time (roughly)", autofocus: true %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="medium-12 columns">
+  <%= f.text_area :description, placeholder: "Description", autofocus: true %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="medium-12 columns">
   <%= f.submit "Share Skill" %>
+  </div>
+  </div>
 <% end %>

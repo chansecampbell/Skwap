@@ -15,6 +15,14 @@
 //= require foundation
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation();
+  // var page = $("body").has(".front-image")
+
+  // var img = "/assets/drawing-sa.jpeg"
+
+  // page.css("background-image", "url(" + img + ")");
+
+
+ });
 
 
