@@ -244,13 +244,13 @@ s7 = u12.skills.create!(title: "Cooking with John - Pasta 101",
                         category: "Cooking",
                         availability: "Evening")
 
-c11 = Connection.create!(skill_id: s6.id,
+c11 = Connection.create!(skill_id: s7.id,
                          meetup_time: Time.now + 2.week.to_i,
                          details: "I'm a bit of a rubbish cook so this sounds like a good plan. How about in 2 weeks time?",
                          sender_id: u13.id,
                          receiver_id: u12.id)
 
-c12 = Connection.create!(skill_id: s6.id,
+c12 = Connection.create!(skill_id: s7.id,
                          meetup_time: Time.now + 1.week.to_i,
                          details: "Hi John, I'm a 5ft 10 single lady looking to spice up my life with a hot new dish. Are you willing to help me serve it up next week?",
                          sender_id: u4.id,

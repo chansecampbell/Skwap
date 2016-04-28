@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Raleway';
-  // src: url(font-path('Raleway-Medium.ttf'))
+  src: url(font-path('Raleway-Medium.ttf'))
 }
 
 @font-face {
@@ -21,13 +21,32 @@ body {
 
 .type {
   position: fixed;
-  left: 15%;
+  left: 5%;
   top: 40%;
   height: 200px;
   width: 600px;
   color: white;
   font-size: 2em;
   // text-transform: translate(-100px, -100px)
+}
+
+.type-font {
+  font-family: 'Raleway', sans-serif;
+}
+
+.mac {
+  position: fixed;
+  right: 2%;
+  top: 20%;
+  max-width: 600px;
+  height: auto;
+  text-align: center;
+}
+
+.mac-font {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5em;
+  color: white;
 }
 
 body.london {
@@ -242,5 +261,41 @@ li.name {
 }
 
 
+@media (min-width: 640px) and (max-width: 1040px) {
+  .type {
+    width: 300px;
+    font-size: 1.1em;
+  }
 
+  .mac {
+    width: 500px;
+  }
+
+}
+
+
+@media (max-width: 640px) {
+  .mac {
+    position: static;
+    // width: 450px;
+    // height: auto;
+    // display: block;
+  }
+
+
+  .mac-font {
+    font-size: 0.8em
+  }
+
+  .type {
+    padding: 10px;
+    // margin-top: 50px;
+    position: static;
+    font-size: 1.5em;
+    // display: block;
+    // width: 400px;
+    // height: 200px;
+    // text-align: center;
+  }
+}
 

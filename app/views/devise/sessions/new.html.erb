@@ -5,141 +5,147 @@
  <div id="myModal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
    <div class="form">
 
-   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+     <div class="row">
+       <div class="medium-12 columns">
+         <h2 class="head-text">Login</h2>
+       </div>
+     </div>
+     <div class="row">
+       <div class="medium-8 columns medium-centered">
+        <%= f.email_field :email, placeholder: "Email", autofocus: true %>
+      </div>
+    </div>
+    <div class="row">
+     <div class="medium-8 columns medium-centered">
+      <%= f.password_field :password, placeholder: "Password", autocomplete: "off" %>
+    </div>
+    <div class="action">
+      <div class="medium-6 columns medium-centered">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-8 columns medium-centered">
+        <%= f.submit "Sign In", class: "button" %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+
+<div id="myModal2" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+ <div class="form">
+   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+   <%= devise_error_messages! %>
+
    <div class="row">
      <div class="medium-12 columns">
-     <h2 class="head-text">Sign In</h2>
+       <h2 class="head-text">Register</h2>
      </div>
-     </div>
-   <div class="row">
-     <div class="medium-8 columns medium-centered">
-          <%= f.email_field :email, placeholder: "Email", autofocus: true %>
-       </div>
-       </div>
-       <div class="row">
-         <div class="medium-8 columns medium-centered">
-          <%= f.password_field :password, placeholder: "Password", autocomplete: "off" %>
-          </div>
-          <div class="action">
-          <div class="medium-6 columns medium-centered">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-              </div>
-              </div>
-              <div class="row">
-                <div class="medium-8 columns medium-centered">
-            <%= f.submit "Log in", class: "button" %>
-          </div>
-          </div>
-          </div>
-          </div>
-          <% end %>
+   </div>
 
-   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+   <div class="row" data-equalizer>
+     <div class="medium-12 columns" data-equalizer-watch>
+       <div class="field">
+         <%= f.text_field :first_name, placeholder: "First Name"%>
+       </div>
+     </div>
    </div>
 
 
-   <div id="myModal2" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-     <div class="form">
-   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-     <%= devise_error_messages! %>
-
-     <div class="row">
-       <div class="medium-12 columns">
-       <h2 class="head-text">Register</h2>
+   <div class="row" data-equalizer>
+     <div class="medium-12 columns" data-equalizer-watch>
+       <div class="field">
+         <%= f.text_field :last_name, placeholder: "Last Name"%>
        </div>
+     </div>
+   </div>
+
+
+   <div class="row" data-equalizer>
+     <div class="medium-12 columns" data-equalizer-watch>
+       <div class="field">
+         <%= f.text_field :location, placeholder: "Location"%>
        </div>
+     </div>
+   </div>
 
-     <div class="row" data-equalizer>
-       <div class="medium-12 columns" data-equalizer-watch>
-     <div class="field">
-       <%= f.text_field :first_name, placeholder: "First Name"%>
+   <div class="row" data-equalizer>
+     <div class="medium-12 columns" data-equalizer-watch>
+       <div class="field">
+         <%= f.file_field :photo %>
+       </div>
      </div>
-     </div>
-     </div>
+   </div>
 
+   <div class="row" data-equalizer>
+     <div class="medium-12 columns" data-equalizer-watch>
+       <div class="field">
+         <%= f.email_field :email, placeholder: "Email Address", autofocus: true %>
+       </div>
+     </div>
+   </div>
 
-     <div class="row" data-equalizer>
-       <div class="medium-12 columns" data-equalizer-watch>
-     <div class="field">
-       <%= f.text_field :last_name, placeholder: "Last Name"%>
+   <div class="row" data-equalizer>
+     <div class="medium-12 columns" data-equalizer-watch>
+       <div class="field">
+         <%= f.password_field :password, placeholder: "Password (8 characters minimum)", autocomplete: "off" %>
+       </div>
      </div>
-     </div>
-     </div>
+   </div>
 
+   <div class="row" data-equalizer>
+     <div class="medium-12 columns" data-equalizer-watch>
+       <div class="field">
+         <%= f.password_field :password_confirmation, placeholder: "Password confirmation", autocomplete: "off" %>
+       </div>
+     </div>
+   </div>
 
-     <div class="row" data-equalizer>
-       <div class="medium-12 columns" data-equalizer-watch>
-     <div class="field">
-       <%= f.text_field :location, placeholder: "Location"%>
-     </div>
-     </div>
-     </div>
-
-     <div class="row" data-equalizer>
-       <div class="medium-12 columns" data-equalizer-watch>
-         <div class="field">
-           <%= f.file_field :photo %>
+   <div class="row" data-equalizer>
+     <div class="medium-12 columns" data-equalizer-watch>
+       <div class="field">
+         <div class="actions">
+           <%= f.submit "Sign up", class: "button" %>
          </div>
        </div>
      </div>
-
-     <div class="row" data-equalizer>
-       <div class="medium-12 columns" data-equalizer-watch>
-     <div class="field">
-       <%= f.email_field :email, placeholder: "Email Address", autofocus: true %>
-     </div>
-     </div>
-     </div>
-
-     <div class="row" data-equalizer>
-       <div class="medium-12 columns" data-equalizer-watch>
-     <div class="field">
-       <%= f.password_field :password, placeholder: "Password (8 characters minimum)", autocomplete: "off" %>
-     </div>
-     </div>
-     </div>
-
-     <div class="row" data-equalizer>
-       <div class="medium-12 columns" data-equalizer-watch>
-     <div class="field">
-       <%= f.password_field :password_confirmation, placeholder: "Password confirmation", autocomplete: "off" %>
-     </div>
-     </div>
-     </div>
-
-     <div class="row" data-equalizer>
-       <div class="medium-12 columns" data-equalizer-watch>
-     <div class="field">
-     <div class="actions">
-       <%= f.submit "Sign up", class: "button" %>
-     </div>
-     </div>
-     </div>
-   <% end %>
+     <% end %>
    </div>
-   </div>
-   </div>
-<p></p>
+ </div>
+</div>
+
 
 <div class="type">
-<span>I'd like to learn to..</span><br>
-   <script>
-       $(function(){
-           $(".element").typed({
-               strings: ["Learn a new language..", "Discover some new cooking recipes..", "Get in shape for my wedding..", "Learn to code.."],
-               typeSpeed: 0
-           });
-       });
-   </script>
-   ...
+  <span class="type-font">I would like to..</span><br>
+  <script>
+   $(function(){
+     $(".element").typed({
+       strings: ["Learn to speak french..", "Discover some new recipes..", "Find help to get in shape..", "Learn to code.."],
+       typeSpeed: 0
+     });
+   });
+ </script>
 
-   <span class="element"></span>
+ <span class="element"></span>
 
 </div>
-<img src="/assets/pixel-cover.png">
- 
- 
+
+<div class="mac">
+  <img src="/assets/macskwap.png"><br>
+  <span class="mac-font">Share what you know, learn what you dont. Free.</span><br>
+<!--   <span class="mac-font">London's newest social sharing platform.</span><br>
+-->
+</div>
+
+
+
 </body>
 
 
