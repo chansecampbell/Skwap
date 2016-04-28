@@ -4,7 +4,7 @@
 
     <ul class="tabs" data-tab data-options="scroll_to_content: false">
       <li class="tab-title"><a href="#learn">Learn a skill</a></li>
-      <li class="tab-title"><a href="#user-learnings">Outbox</a></li>
+      <li class="tab-title"><a href="#user-learnings"><%= current_user.first_name %>'s Outbox</a></li>
     </ul>
 
     <div class="tabs-content">
@@ -37,7 +37,7 @@
 
       <div class="content" id="user-learnings-content">
 
-       <div class="row">
+     <!--   <div class="row">
          <div class="medium-12 columns">
            <div class="card">
              <div class="content">
@@ -53,7 +53,7 @@
             </div>
             </div>
             </div>
-            </div>
+            </div> -->
 
 <%= render "learn" %>
 

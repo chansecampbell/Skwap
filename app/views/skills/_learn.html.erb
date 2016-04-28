@@ -1,7 +1,7 @@
-        <% @connections.each do |connection| %>
-        <div class="row">
+ <div class="row">
+ <div class="medium-12 columns">
+ <% @connections.each do |connection| %>
           <% if current_user.id == connection.sender_id %>
-          <div class="medium-12 columns">
             <div class="card">
               <div class="content">
                 <li><strong>You applied to learn: <%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
@@ -24,9 +24,10 @@
                 <% end %>
               </div>
             </div>
-          </div>
+            <% end %>
+         
           
-          <% end %>
+  <% end %>
         </div>
-        <% end %>
+   
 

@@ -4,7 +4,7 @@
 
     <ul class="tabs" data-tab data-options="scroll_to_content: false">
       <li class="tab-title"><a href="#share">Share a skill</a></li>
-      <li class="tab-title"><a href="#user-listings"><%= current_user.first_name %>'s listings</a></li>
+      <li class="tab-title"><a href="#user-listings"><%= current_user.first_name %>'s Inbox</a></li>
     </ul>
 
     <div class="tabs-content">
@@ -21,7 +21,7 @@
 
       <div class="content" id="user-listings-content">
        
-     <div class="row">
+<!--      <div class="row">
        <div class="medium-12 columns">
          <div class="card">
          <div class="content">
@@ -35,21 +35,20 @@
              <h4>Credits:</strong> <%= current_user.credits %></h4>
              <div class="row">
                <div class="medium-12 columns">
-               <div class="title">Classes I've listed</div>
-               <% current_user.skills.each do |skill| %>
-                     <li><strong><%= link_to skill.try(:title), edit_skill_path(skill) %></strong></li>
+               <div class="title">Classes I've listed:</div>
+               <#% current_user.skills.each do |skill| %>
+                     <li><strong><#%= link_to skill.try(:title), edit_skill_path(skill) %></strong></li>
                  </div>
                </div>
-               <% end %>
+               <#% end %>
             </div>
             </div>
 
             </div>
             </div>
             </div>
-            </div>
+            </div> -->
        
- 
      <%= render "share" %>
       </div>
      </div>
