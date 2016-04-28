@@ -1,6 +1,10 @@
 body {
   list-style-type: none;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto Slab', serif;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
 }
 
 .row.main-row {
@@ -14,6 +18,10 @@ a {
 a:hover {
   color: black;
 }
+
+// a.card {
+//   color: pink;
+// }
 
 li a img,
 .my-picture img {
@@ -80,15 +88,25 @@ li.name {
   color: #fff;
 }
 
-// #title-name {
-//   color: #333;
-// }
+.top-bar .name h1 {
+  font-size: 3em;
+}
+
+.top-bar .name span {
+  margin-left: -10px;
+  font-size: 1.5em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+.top-bar-section ul li > a {
+  font-size: 0.7em;
+}
 
 .personal-header {
-  font-size: 0.5em;
+  font-size: 0.7em;
   letter-spacing: 0.15em;
   list-style-type: none;
-  font-weight: bolder;
   text-transform: uppercase;
   text-align: right;
   padding-top: 5px;
