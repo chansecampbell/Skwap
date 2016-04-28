@@ -26,17 +26,17 @@ $(function(){
   
   // var searchIcon = "<i class='fa fa-search' aria-hidden='true'></i>"
   // $('input.search-button').val(searchIcon)
-  $(".share-container").on('mouseover', function(){
-    $(this).css("color", "white");
-    $("body").css("background-image", "url('/assets/drawing-sa.jpeg')");
+  // $(".share-container").on('mouseover', function(){
+  //   $(this).css("color", "white");
+  //   $("body").css("background-image", "url('/assets/citycars.jpeg')");
 
-    });
+  //   });
 
-  $(".share-container").on('mouseout', function(){
-    // $(this).css("background", "white");
-    $("body").css("background", "white");
+  // $(".share-container").on('mouseout', function(){
+  //   // $(this).css("background", "white");
+  //   $("body").css("background", "white");
 
-    });
+    // });
 
 
 });

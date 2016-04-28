@@ -11,6 +11,7 @@
 body {
   list-style-type: none;
   font-family: 'Open Sans', sans-serif;
+  background-size: contain;
 }
 
 h1, h2, h3, h4 {
@@ -30,7 +31,6 @@ a {
 a:hover {
   color: black;
 }
-
 
 input.button {
   width: 100%;
@@ -147,6 +147,16 @@ li.name {
 
 // }
 
+// Active tab
+// .tabs dd.active > a, .tabs .tab-title.active > a {
+//   font-weight: bold;
+// }
+
+// // Non-active tab
+// .tabs dd > a, .tabs .tab-title > a {
+//   color: lightgray;
+// }
+
 // connection show page comments
 
 #current {
@@ -163,6 +173,9 @@ li.name {
 .choice-container,
 .share-container {
   text-align: center;
+  width: 100%;
+  height: auto;
+  letter-spacing: 0.5em;
 }
 
 .learn {
@@ -171,10 +184,9 @@ li.name {
 }
 
 .learn-container {
-  // background: lightgreen;
   animation-name: slideInLeft;
   animation-duration: 3s;
-  transition: all 0.7s;
+  transition: all 1s;
 }
 
 .learn-container:hover {
@@ -187,9 +199,13 @@ li.name {
 }
 
 .share-container {
-  // background: lightblue;
   animation-name: slideInRight;
   animation-duration: 3s;
+  transition: all 1s;
+}
+
+.share-container:hover {
+  background: lightblue;
 }
 
 .choice {
@@ -200,6 +216,9 @@ li.name {
 .choice-container {
   animation-name: zoomIn;
   animation-duration: 4s;
+  transition: all 1s;
 }
+
+
 
 
