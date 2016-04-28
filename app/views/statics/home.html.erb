@@ -1,17 +1,17 @@
   <div id="main-page-contents">
   <div class="row">
-    <div class="medium-6 columns medium-centered" style="font-size: 4em">
-      <div class="learn"><%= link_to 'Learn', skills_path(:anchor => "learn") %></div>
+    <div class="medium-6 columns medium-centered">
+      <div class="learn-container"><%= link_to 'Learn', skills_path(:anchor => "learn"), class: "learn" %></div>
     </div>
     </div>
     <div class="row">
       <div class="medium-6 columns medium-centered">
-      <div class="choice"><h3>What would you like to do today?</h3></div>
+      <div class="choice-container"><span class="choice">What would you like to do today?</span</div>
       </div>
     </div>
     <div class="row">
-      <div class="medium-6 columns medium-centered" style="font-size: 4em">
-      <div class="share"><%= link_to 'Share', new_skill_path(:anchor => "share") %></div>
+      <div class="medium-6 columns medium-centered">
+      <div class="share-container"><%= link_to 'Share', new_skill_path(:anchor => "share"), class: "share" %></div>
       </div>
     </div>
     </div>

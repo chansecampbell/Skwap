@@ -1,6 +1,11 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url(font-path('Raleway-Medium.ttf'))
+}
+
 body {
   list-style-type: none;
-  font-family: 'Roboto Slab', serif;
+  // font-family: 'Roboto Slab', serif;
 }
 
 h1 {
@@ -19,6 +24,18 @@ a:hover {
   color: black;
 }
 
+
+input.button {
+  width: 100%;
+}
+
+.row.spacer {
+  margin-bottom: 10px;
+}
+
+.row.top-spacer {
+  margin-top: 20px;
+}
 // a.card {
 //   color: pink;
 // }
@@ -43,8 +60,9 @@ color: #fff;
 }
 
 #main-page-contents {
-  margin: 150px 0;
-  background-color: #E0E0E0;
+  margin: 100px 0;
+  // background-color: #E0E0E0;
+// justify-content: center;
 }
 
 .front-image {
@@ -104,7 +122,7 @@ li.name {
 }
 
 .personal-header {
-  font-size: 0.7em;
+  font-size: 0.6em;
   letter-spacing: 0.15em;
   list-style-type: none;
   text-transform: uppercase;
@@ -135,16 +153,47 @@ li.name {
 
 // static page main section
 
-.learn {
-  // color: lightblue;
+.learn-container,
+.choice-container,
+.share-container {
   text-align: center;
+}
+
+.learn {
+  font-size: 6em;
+  color: #333;
+}
+
+.learn-container {
+  // background: lightgreen;
+  animation-name: slideInLeft;
+  animation-duration: 3s;
+  transition: all 0.7s;
+}
+
+.learn-container:hover {
+  background: lightgreen;
 }
 
 .share {
-  // color: lightgreen;
-  text-align: center;
+  font-size: 6em;
+  color: #333;
+}
+
+.share-container {
+  // background: lightblue;
+  animation-name: slideInRight;
+  animation-duration: 3s;
 }
 
 .choice {
-  text-align: center;
+  font-size: 1.3em;
+  color: #FFCC2F;
 }
+
+.choice-container {
+  animation-name: zoomIn;
+  animation-duration: 4s;
+}
+
+

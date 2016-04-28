@@ -15,7 +15,7 @@
             <li><%= image_tag("/assets/running-pair.jpg") %></li>
           </div>
         </div>
-        <div class="row" data-equalizer>
+        <div class="row top-spacer" data-equalizer>
 
           <%#= @categories %>
           <%= search_form_for @q do |f| %>
@@ -53,25 +53,25 @@
             </div>
             </div>
             </div>
-            </div> -->
+          </div> -->
 
-<%= render "learn" %>
+          <%= render "learn" %>
 
-</div>
-<!-- These three are the closing divs from the top of the page -->
-</div>
-</div>
-</div>
+        </div>
+        <!-- These three are the closing divs from the top of the page -->
+      </div>
+    </div>
+  </div>
 
-<script>
-  $(document).ready(function() {
-    if (location.search && location.pathname == "/skills") {
-      var anchorTagToSelect = $("a[href='#learn']")
-      var tabToSelect = anchorTagToSelect.parent();
-      tabToSelect.toggleClass("active");
+  <script>
+    $(document).ready(function() {
+      if (location.search && location.pathname == "/skills") {
+        var anchorTagToSelect = $("a[href='#learn']")
+        var tabToSelect = anchorTagToSelect.parent();
+        tabToSelect.toggleClass("active");
 
-      var contentToSelect = $("#learn-content");
-      contentToSelect.toggleClass("active");
-    }
-  });
-</script>
+        var contentToSelect = $("#learn-content");
+        contentToSelect.toggleClass("active");
+      }
+    });
+  </script>

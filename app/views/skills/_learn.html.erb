@@ -1,33 +1,41 @@
- <div class="row">
- <div class="medium-12 columns">
- <% @connections.each do |connection| %>
-          <% if current_user.id == connection.sender_id %>
-            <div class="card">
-              <div class="content">
-                <li><strong>You applied to learn: <%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
-                <%  users = User.where(id: connection.receiver_id) %>
-                <% users.each do |user| %>
-                <div class="row">
-                <div class="medium-4 columns">
-                <li><%= link_to image_tag(user.photo.thumb.url), skill_connection_path(connection.skill_id, connection) %></li>
-                </div>
-                <div class="medium-8 columns">
-                <li><strong>Master:</strong> <%= user.first_name %></li>
-                <% end %>
-                <li><strong>Lesson status:</strong> <%= connection.status %></li>
-                <% if connection.status == "Pending" %>
-                <li><%= link_to "Cancel", cancel_connection_path(connection), class: "button" %></li>
-                <% else %>
-                <li>You can no longer change your request status</li>
-                </div>
-                </div>
-                <% end %>
-              </div>
-            </div>
+<% @connections.each do |connection| %>
+<div class="row spacer">
+  <div class="medium-12 columns">
+    <% if current_user.id == connection.sender_id %>
+
+    <div class="card">
+      <div class="content">
+        <li><strong>You applied to learn: <%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
+
+        <%  users = User.where(id: connection.receiver_id) %>
+        <% users.each do |user| %>
+
+        <div class="row">
+
+          <div class="medium-4 columns">
+            <%= link_to image_tag(user.photo.thumb.url), skill_connection_path(connection.skill_id, connection) %>
+          </div>
+
+          <div class="medium-8 columns">
+            <li><strong>Master:</strong> <%= user.first_name %></li>
+            <li><strong>Lesson status:</strong> <%= connection.status %></li>
+
+            <% if connection.status == "Pending" %>
+            <li><%= link_to "Cancel", cancel_connection_path(connection), class: "button" %></li>
+            <% else %>
+            <li>You can no longer change your request status</li>
             <% end %>
           </div>
-          
-  <% end %>
+
         </div>
-   
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+<% end %>
+
+
+
 
