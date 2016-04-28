@@ -4,9 +4,14 @@
   <div class="medium-12 columns">
     <div class="card">
       <div class="content">
-        <li><strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
         <% users = User.where(id: connection.sender_id) %>
         <% users.each do |user| %>
+        <div class="row">
+        <div class="medium-4 columns">
+        <li><%= link_to image_tag(user.photo.thumb.url) %></li>
+        </div>
+        <div class="medium-8 columns">
+        <li>I'd like to learn: <strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
         <li><strong>Padawan:</strong> <%= user.first_name %></li>
         <% end %>
         <li><strong>Lesson status:</strong> <%= connection.status %></li>
@@ -18,6 +23,8 @@
         <% elsif connection.status == "Accepted" && connection.meetup_time.past? %>
         <li><%= link_to "Complete", complete_connection_path(connection), class: "button" %></li>
         <% end %>
+        </div>
+        </div>
       </div>
     </div>
   </div>

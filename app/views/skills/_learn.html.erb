@@ -7,14 +7,20 @@
                 <li><strong>You applied to learn: <%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
                 <%  users = User.where(id: connection.receiver_id) %>
                 <% users.each do |user| %>
+                <div class="row">
+                <div class="medium-4 columns">
                 <li><%= link_to image_tag(user.photo.thumb.url), skill_connection_path(connection.skill_id, connection) %></li>
+                </div>
+                <div class="medium-8 columns">
                 <li><strong>Master:</strong> <%= user.first_name %></li>
                 <% end %>
                 <li><strong>Lesson status:</strong> <%= connection.status %></li>
                 <% if connection.status == "Pending" %>
-                <li><%= link_to "Cancel", cancel_connection_path(connection) %></li>
+                <li><%= link_to "Cancel", cancel_connection_path(connection), class: "button" %></li>
                 <% else %>
                 <li>You can no longer change your request status</li>
+                </div>
+                </div>
                 <% end %>
               </div>
             </div>

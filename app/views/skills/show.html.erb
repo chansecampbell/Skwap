@@ -1,20 +1,21 @@
 <!-- Wraps the entire page -->
 <div class="row main-row">
   <div class="medium-10 columns medium-centered">
+  <div class="card" data-equalizer-watch>
+
 
     <div class="row" data-equalizer>
       <div class="medium-12 columns">
-        <div class="card" data-equalizer-watch>
+      <div class="card" data-equalizer-watch>
           <div class="content">
             <h1>Meet <%= @skill.user.first_name %></h1>
           </div>
-        </div>
+          </div>
       </div>
     </div>
 
     <div class="row" data-equalizer>
       <div class="medium-12 columns">
-        <div class="card" data-equalizer-watch>
           <div class="content">
 
             <div class="row" data-equalizer>
@@ -22,7 +23,7 @@
                 <li><%= link_to image_tag(@skill.user.photo.thumb.url), @skill.user.photo.url %></li>
               </div>
               <div class="medium-9 columns" data-equalizer-watch>
-                <h3><strong>Teacher:</strong> <%= @skill.user.first_name %></h3>
+                <h3><strong>Master:</strong> <%= @skill.user.first_name %></h3>
                 <h3><strong>Skill:</strong> <%= @skill.title %></h3>
               </div>
             </div>
@@ -31,13 +32,11 @@
              </div>
            </div>
          </div>
-       </div>
      </div>
    </div>
 
    <div class="row" data-equalizer>
     <div class="medium-12 columns">
-      <div class="card" data-equalizer-watch>
         <div class="content">
           <div class="row">
             <div class="medium-4 columns">
@@ -50,12 +49,10 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
   <div class="row" data-equalizer>
     <div class="medium-12 columns">
-      <div class="card" data-equalizer-watch>
         <div class="content">
           <div class="row">
             <div class="medium-6 columns">
@@ -64,9 +61,9 @@
             </div>
           </div>
         </div>
-      </div>
 
     </div>
   </div>
+</div>
 </div>
 </div>
