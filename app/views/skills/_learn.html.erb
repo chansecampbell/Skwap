@@ -4,9 +4,10 @@
           <div class="medium-12 columns">
             <div class="card">
               <div class="content">
-                <li><strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
+                <li><strong>Looking for a: <%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
                 <%  users = User.where(id: connection.receiver_id) %>
                 <% users.each do |user| %>
+                <li><%= link_to image_tag(user.photo.thumb.url) %></li>
                 <li><strong>Master:</strong> <%= user.first_name %></li>
                 <% end %>
                 <li><strong>Lesson status:</strong> <%= connection.status %></li>

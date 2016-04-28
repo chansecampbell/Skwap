@@ -1,51 +1,71 @@
-<div class="row main-row"
+<div class="row main-row">
   <div class="medium-10 columns medium-centered">
 
     <div class="row" data-equalizer>
       <div class="medium-12 columns">
         <div class="card" data-equalizer-watch>
           <div class="content">
-
-
-          <% if current_user == @connection.receiver_id %>
-          <% @user = User.where(id: @connection.sender_id) %>
-          <% @user.each do |user| %>
-          <h1>Meet <%= user.first_name%></h1>
-            <% end %>
-          <% elsif current_user == @connection.sender_id %>
-          <% @user = User.where(id: @connection.receiver_id) %>
-          <% @user.each do |user| %>
-          <h1>Meet <%= user.first_name%></h1>
-          <% end %>
-          <% end %>
+            <h1>Get to know each other</h1>
           </div>
         </div>
       </div>
     </div>
 
-    <h3><%= @skill.title %></h3>
-    <% @user = User.where(id: @connection.receiver_id) %>
-    <% @user.each do |user| %>
-    <li><strong>Master:</strong> <%= user.first_name %></li>
-    <% end %>
-    <%  @user = User.where(id: @connection.sender_id) %>
-    <% @user.each do |user| %>
-    <li><strong>Padawan:</strong> <%= user.first_name %></li>
-    <% end %>
-    <li><strong>Meetup Date:</strong> <%= @connection.meetup_time.strftime("%B %d, %Y") %></li>
-    <li><strong>Available period:</strong> <%= @skill.availability %></li>
-    <%  @user = User.where(id: @connection.sender_id) %>
-    <% @user.each do |user| %>
-    <p><li><strong><%= user.first_name %> says:</strong> <%= @connection.details %></li>
-      <% end %>
-      <%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @connection } %>
-      <%= render partial: 'comments/form', locals: { commentable: @connection } %></p>
+    <div class="row" data-equalizer>
+      <div class="medium-12 columns">
+        <div class="card" data-equalizer-watch>
+          <div class="content">
 
-      <% if current_user.id == @connection.sender_id %>
-      <p><li><%= link_to 'Back', skills_path(:anchor => "user-learnings") %></li></p>
-      <% elsif current_user.id == @connection.receiver_id %>
-      <p><li><%= link_to 'Back', new_skill_path(:anchor => "user-listings") %></li></p>
-      <% end %>
+            <h3><%= @skill.title %></h3>
+            <% @user = User.where(id: @connection.receiver_id) %>
+            <% @user.each do |user| %>
+            <div class="row" data-equalizer>
+              <div class="medium-6 columns" data-equalizer-watch>
+                <li><strong>Master:</strong> <%= user.first_name %></li>
+              </div>
+              <% end %>
+              <%  @user = User.where(id: @connection.sender_id) %>
+              <% @user.each do |user| %>
+              <div class="medium-6 columns" data-equalizer-watch>
+                <li><strong>Padawan:</strong> <%= user.first_name %></li>
+              </div>
+            </div>
+            <% end %>
+            <%  @user = User.where(id: @connection.receiver_id) %>
+            <% @user.each do |user| %>
+            <div class="row" data-equalizer>
+              <div class="medium-6 columns" data-equalizer-watch>
+                <li><%= image_tag(user.photo.thumb.url) %></li>
+              </div>
+              <%  @user = User.where(id: @connection.sender_id) %>
+              <% @user.each do |user| %>
+              <div class="medium-6 columns" data-equalizer-watch>
+                <li><%= image_tag(user.photo.thumb.url) %></li>
+              </div>
+            </div>
+            <% end %>
+            <li><strong>Meetup Date:</strong> <%= @connection.meetup_time.strftime("%B %d, %Y") %></li>
+            <li><strong>Available period:</strong> <%= @skill.availability %></li>
+            <%  @user = User.where(id: @connection.sender_id) %>
+            <% @user.each do |user| %>
+            <p><li><strong><%= user.first_name %> says:</strong> <%= @connection.details %></li>
+              <% end %>
+              <%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @connection } %>
+              <%= render partial: 'comments/form', locals: { commentable: @connection } %></p>
+
+              <% if current_user.id == @connection.sender_id %>
+              <p><li><%= link_to 'Back', skills_path(:anchor => "user-learnings"), class: "button" %></li></p>
+              <% elsif current_user.id == @connection.receiver_id %>
+              <p><li><%= link_to 'Back', new_skill_path(:anchor => "user-listings"), class: "button" %></li></p>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
-  </div>
+
+  <% end %>
+
+</div>

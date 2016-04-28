@@ -11,12 +11,12 @@
         <% end %>
         <li><strong>Lesson status:</strong> <%= connection.status %></li>
         <% if connection.status == "Pending" %>
-        <li><%= link_to "Accept", accept_connection_path(connection) %></li>
-        <li><%= link_to "Decline", reject_connection_path(connection) %></li>
+        <li><%= link_to "Accept", accept_connection_path(connection), class: "button" %>
+        <%= link_to "Decline", reject_connection_path(connection), class: "button" %></li>
         <% elsif connection.status == "Declined" %>
         <li>You declined this connection</li>
         <% elsif connection.status == "Accepted" && connection.meetup_time.past? %>
-        <li><%= link_to "Complete", complete_connection_path(connection) %></li>
+        <li><%= link_to "Complete", complete_connection_path(connection), class: "button" %></li>
         <% end %>
       </div>
     </div>

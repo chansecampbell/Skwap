@@ -2,15 +2,15 @@
 <div class="row main-row">
   <div class="medium-10 columns medium-centered">
 
-  <div class="row" data-equalizer>
-    <div class="medium-12 columns">
-      <div class="card" data-equalizer-watch>
-      <div class="content">
-      <h1>Meet <%= @skill.user.first_name %></h1>
+    <div class="row" data-equalizer>
+      <div class="medium-12 columns">
+        <div class="card" data-equalizer-watch>
+          <div class="content">
+            <h1>Meet <%= @skill.user.first_name %></h1>
+          </div>
+        </div>
       </div>
-      </div>
-      </div>
-      </div>
+    </div>
 
     <div class="row" data-equalizer>
       <div class="medium-12 columns">
@@ -18,28 +18,45 @@
           <div class="content">
 
             <div class="row" data-equalizer>
-            <div class="medium-3 columns" data-equalizer-watch>
+              <div class="medium-3 columns" data-equalizer-watch>
                 <li><%= link_to image_tag(@skill.user.photo.thumb.url), @skill.user.photo.url %></li>
               </div>
               <div class="medium-9 columns" data-equalizer-watch>
-              <h3><strong>Teacher:</strong> <%= @skill.user.first_name %></h3>
-              <h3><strong>Skill:</strong> <%= @skill.title %></h3>
-            </div>
-            </div>
-       <div class="row">
-         <div class="medium-12 columns">
-                </div>
-                </div>
-                <div class="row">
-                  <div class="medium-4 columns">
-                <li><strong>Location:</strong> <%= @skill.location %></li>
-                <li><strong>Availability:</strong> <%= @skill.availability %></li>
-                <li><strong>Response time:</strong> <%= @skill.response_time %></li>
+                <h3><strong>Teacher:</strong> <%= @skill.user.first_name %></h3>
+                <h3><strong>Skill:</strong> <%= @skill.title %></h3>
               </div>
-              <div class="medium-6 columns">
+            </div>
+            <div class="row">
+             <div class="medium-12 columns">
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="row" data-equalizer>
+    <div class="medium-12 columns">
+      <div class="card" data-equalizer-watch>
+        <div class="content">
+          <div class="row">
+            <div class="medium-4 columns">
+              <li><strong>Location:</strong> <%= @skill.location %></li>
+              <li><strong>Availability:</strong> <%= @skill.availability %></li>
+              <li><strong>Response time:</strong> <%= @skill.response_time %></li>
+            </div>
+            <div class="medium-6 columns">
               <li><strong>Description:</strong> <%= @skill.description %></li>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" data-equalizer>
+    <div class="medium-12 columns">
+      <div class="card" data-equalizer-watch>
+        <div class="content">
           <div class="row">
             <div class="medium-6 columns">
               <li><%= link_to "Connect", new_skill_connection_path(@skill), class: "button" %></li>
