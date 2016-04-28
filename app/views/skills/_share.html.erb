@@ -6,7 +6,15 @@
       <div class="content">
         <% users = User.where(id: connection.sender_id) %>
         <% users.each do |user| %>
-        <li><strong><%= user.first_name %> would like to learn: </strong></li>
+        <% if connection.status == "Pending" %>
+        <li><strong class="pending"><%= user.first_name %> would like to learn: </strong></li>
+        <% elsif connection.status == "Accepted" %>
+        <li><strong class="accepted">You are teaching <%= user.first_name %>:</strong></li>
+        <% elsif connection.status == "Completed" %>
+        <li><strong class="completed">You taught <%= user.first_name %>:</strong></li>
+        <% else %>
+        <li><strong class="declined">You declined to teach <%= user.first_name %>:</strong></li>
+        <% end %>
         <div class="row">
 
         <div class="medium-4 columns">

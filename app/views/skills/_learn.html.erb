@@ -5,10 +5,17 @@
 
     <div class="card">
       <div class="content">
-        <li><strong>You applied to learn: </strong></li>
-
         <%  users = User.where(id: connection.receiver_id) %>
         <% users.each do |user| %>
+        <% if connection.status == "Pending" %>
+        <li><strong class="pending">You applied to learn: </strong></li>
+        <% elsif connection.status == "Accepted" %>
+        <li><strong class="accepted">You have been accepted to learn: </strong></li>
+        <% elsif connection.status == "Completed" %>
+        <li><strong class="completed">You successfully completed: </strong></li>
+        <% else %>
+        <li><strong class="declined">You were declined: </strong></li>
+        <% end %>
 
         <div class="row">
 

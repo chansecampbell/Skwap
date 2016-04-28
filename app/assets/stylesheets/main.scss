@@ -1,3 +1,4 @@
+// ************ GLOBAL
 @font-face {
   font-family: 'Raleway';
   src: url(font-path('Raleway-Medium.ttf'))
@@ -11,51 +12,6 @@
 body {
   list-style-type: none;
   font-family: 'Open Sans', sans-serif;
-}
-
-// .london {
-//   background-image: url('/assets/london-skyline.jpeg');
-//   background-size: cover;
-//   height: 90vh;
-// }
-
-.type {
-  // position: fixed;
-  // left: 5%;
-  // top: 40%;
-  // height: 200px;
-  // width: 600px;
-  color: white;
-  font-size: 2em;
-  // text-transform: translate(-100px, -100px)
-}
-
-.type-font {
-  font-family: 'Raleway', sans-serif;
-}
-
-.mac {
-  // position: fixed;
-  // right: 2%;
-  // top: 20%;
-  // max-width: 600px;
-  // height: auto;
-  text-align: center;
-}
-
-.mac-font {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.5em;
-  color: white;
-}
-
-body.london {
-  background-color: #FFCC2F;
- 
-}
-
-.welcome-message {
-  color: white;
 }
 
 h1, h2, h3, h4 {
@@ -93,9 +49,9 @@ input.button {
   margin-top: 20px;
 }
 
-
 a img,
-.my-picture img {
+.my-picture img,
+li img {
   border: 5px solid #333;
 }
 
@@ -107,41 +63,15 @@ a img,
 
   width: 100%;
 
-height: 40px; /* choose any height */
-// border-top: 1px solid #151515;
+height: 40px;
+
 background-color: #FFAC2F;
+
 color: #fff;
+
 }
 
-#main-page-contents {
-  margin: 100px 0;
-  // background-color: #E0E0E0;
-// justify-content: center;
-}
-
-// .front-image {
-//   display: none;
-// }
-
-// @media (max-width: 640px) {
-//   .front-image {
-//     border-bottom: 4px solid #333;
-//     display: initial;
-//     position: relative;
-//   }
-
-//   #sign-in {
-//     position: absolute;
-//     background: white;
-//     margin: 0;
-//   }
-// }
-
-.alert-box.secondary {
-  margin: 0;
-}
-
-// header text
+// ************* HEADER
 
 li.name {
   display: inline-block;
@@ -181,37 +111,49 @@ li.name {
   padding-right: 5px;
 }
 
-// Skill index page
 
-// button {
-//   padding: 0;
-// }
-
-// li.tab-title {
-
-// }
-
-// Active tab
-// .tabs dd.active > a, .tabs .tab-title.active > a {
-//   font-weight: bold;
-// }
-
-// // Non-active tab
-// .tabs dd > a, .tabs .tab-title > a {
-//   color: lightgray;
-// }
-
-// connection show page comments
-
-#current {
-  color: red;
+// ************ FRONT PAGE
+.type {
+  color: white;
+  font-size: 2em;
 }
 
-#other {
-  color: blue;
+.type-font {
+  font-family: 'Raleway', sans-serif;
 }
 
-// static page main section
+.mac {
+  text-align: center;
+}
+
+.mac-font {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5em;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.mac-font2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  color: white;
+}
+
+body.london {
+  background-color: #FFCC2F;
+ 
+}
+
+.welcome-message {
+  color: white;
+}
+
+#main-page-contents {
+  margin: 100px 0;
+}
+
+
+// ********* STATIC WELCOME PAGE
 
 .learn-container,
 .choice-container,
@@ -264,6 +206,55 @@ li.name {
 }
 
 
+// *********** SKILL INDEX PAGE
+
+// .learn-pic {
+//   position: relative;
+//   width: 100%;
+// }
+
+// .learn-desc {
+//   position: absolute;
+//   top: 10px;
+//   left: 10px;
+//   width: 80px;
+//   color: white;
+//   font-family: 'Raleway';
+//   font-size: 1em;
+// }
+
+// ********** CONNECTION SHOW PAGE COMMENTS
+
+#current {
+  color: red;
+}
+
+#other {
+  color: blue;
+}
+
+.accepted {
+  color: #00C853;
+}
+
+.declined {
+  color: #d50000;
+}
+
+.pending {
+  color: #2962FF;
+}
+
+.completed {
+  color: #6200EA;
+}
+
+
+
+
+
+// ********* RESPONSIVE CONTENT
+
 // @media (min-width: 640px) and (max-width: 1040px) {
 //   .type {
 //     width: 300px;
@@ -277,28 +268,9 @@ li.name {
 // }
 
 
-// @media (max-width: 640px) {
-//   .mac {
-//     position: static;
-//     // width: 450px;
-//     // height: auto;
-//     // display: block;
-//   }
-
-
-//   .mac-font {
-//     font-size: 0.8em
-//   }
-
-//   .type {
-//     padding: 10px;
-//     // margin-top: 50px;
-//     position: static;
-//     font-size: 1.5em;
-//     // display: block;
-//     // width: 400px;
-//     // height: 200px;
-//     // text-align: center;
-//   }
-// }
+@media (max-width: 640px) {
+  li img {
+    margin-bottom: 10px;
+  }
+}
 
