@@ -42,11 +42,11 @@
             <%= f.text_area :details, placeholder: "Connection Message.." %>
 
             <%= f.date_field :meetup_time %>
-
+            <li><%= f.submit "Connect", class: "button" %></li>
+            <li><%= link_to "Back", :back, class: "button" %></li>
 
             <% end %>
-            <li><%= link_to "Connect", new_skill_connection_path(@skill), class: "button" %></li>
-            <li><%= link_to "Back", :back, class: "button" %></li>
+
 
           </div>
         </div>

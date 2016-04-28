@@ -4,7 +4,7 @@
 
     <ul class="tabs" data-tab data-options="scroll_to_content: false">
       <li class="tab-title"><a href="#learn">Learn a skill</a></li>
-      <li class="tab-title"><a href="#user-learnings"><%= current_user.first_name %>'s learnings</a></li>
+      <li class="tab-title"><a href="#user-learnings">Outbox</a></li>
     </ul>
 
     <div class="tabs-content">
@@ -34,35 +34,31 @@
         <%= render @skills %>
       </div>
 
+
       <div class="content" id="user-learnings-content">
 
        <div class="row">
          <div class="medium-12 columns">
            <div class="card">
-           <div class="content">
-           <div class="row">
-             <div class="medium-3 columns">
-                <span class="my-picture"><%= image_tag(current_user.photo.thumb.url) %></span>
+             <div class="content">
+               <div class="row">
+                 <div class="medium-3 columns">
+                  <span class="my-picture"><%= image_tag(current_user.photo.thumb.url) %></span>
                 </div>
                 <div class="medium-9 columns">
-               <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
-               <h4>Credits:</strong> <%= current_user.credits %></h4>
+                 <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+                 <h4>Credits:</strong> <%= current_user.credits %></h4>
                </div>
-               </div>
-             </div>
-           </div>
-           </div>
-         </div>
-         
-       </div>
-     </div>
-     
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
 
-     <%= render "learn" %>
-     
+<%= render "learn" %>
 
-   </div>
- </div>
+</div>
+<!-- These three are the closing divs from the top of the page -->
 </div>
 </div>
 </div>
