@@ -42,7 +42,7 @@
            <div class="content">
            <div class="row">
              <div class="medium-3 columns">
-                <%= image_tag(current_user.photo.thumb.url) %>
+                <span class="my-picture"><%= image_tag(current_user.photo.thumb.url) %></span>
                 </div>
                 <div class="medium-9 columns">
                <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>

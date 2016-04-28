@@ -15,7 +15,8 @@ a:hover {
   color: black;
 }
 
-li a img {
+li a img,
+.my-picture img {
   border: 5px solid #333;
 }
 
@@ -37,8 +38,6 @@ color: #fff;
   margin: 150px 0;
   background-color: #E0E0E0;
 }
-
-
 
 .front-image {
   display: none;
