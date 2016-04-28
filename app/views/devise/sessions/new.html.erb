@@ -1,40 +1,46 @@
-<div class="front-image"><%= image_tag("/assets/drawing-sa.jpg")%></div>
+<!-- <div class="front-image"><%= image_tag("/assets/drawing-sa.jpg")%></div>
+ -->
+<section class="london">
 
 <!--  <div class="front-image"></div>
  -->
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 
+<a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
+
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+ <div id="sign-in" class="medium-4 column">
+       <div class="content">
+         <span class="title">Login</span>
+         <p> <div class="field">
+       <%= f.label :email %><br />
+       <%= f.email_field :email, autofocus: true %>
+     </div> </p><p>
+     <div class="field">
+       <%= f.label :password %><br />
+       <%= f.password_field :password, autocomplete: "off" %>
+     </div></p>
+       </div>
+       <div class="action">
+         <div class="field">
+           <%= f.check_box :remember_me %>
+           <%= f.label :remember_me %>
+         </div>
+         <%= f.submit "Log in", class: "button" %>
+       </div>
+       </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
 
 
-    <div id="sign-in" class="medium-4 column">
-        <div class="content">
-          <span class="title">Login</span>
-          <p> <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
-      </div> </p><p>
-      <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div></p>
-        </div>
-        <div class="action">
-          <div class="field">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </div>
-          <%= f.submit "Log in", class: "button" %>
-        </div>
-        </div>
  
  
 
   <% end %>
 
-
   
  
-
+</section>
 
 

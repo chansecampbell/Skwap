@@ -11,7 +11,12 @@
 body {
   list-style-type: none;
   font-family: 'Open Sans', sans-serif;
-  background-size: contain;
+}
+
+.london {
+  background-image: url('/assets/london-skyline.jpeg');
+  background-size: cover;
+  height: 100vh;
 }
 
 h1, h2, h3, h4 {
@@ -70,17 +75,10 @@ color: #fff;
 // justify-content: center;
 }
 
-.front-image {
-  display: none;
-}
+// .front-image {
+//   display: none;
+// }
 
-#sign-in {
-  position: relative;
-  background: white;
-  height: 250px;
-  margin-top: 30px;
-  margin-left: 30px;
-}
 
 
 @media (max-width: 640px) {
