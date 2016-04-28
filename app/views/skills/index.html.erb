@@ -3,7 +3,7 @@
   <div class="medium-10 columns medium-centered">
 
     <ul class="tabs" data-tab data-options="scroll_to_content: false">
-      <li class="tab-title"><a href="#learn">Learn a skill</a></li>
+      <li class="tab-title"><a href="#learn">Learn a skill</a></li> 
       <li class="tab-title"><a href="#user-learnings"><%= current_user.first_name %>'s Outbox</a></li>
     </ul>
 
@@ -26,7 +26,7 @@
             <%= f.text_field :category_cont, placeholder: "Search for a category" %>
           </div>
           <div class="medium-2 columns">
-            <%= f.submit "Submit", class: "button" %>
+            <%= f.submit "Go", class: "button search-button" %>
           </div>
 
           <% end %>

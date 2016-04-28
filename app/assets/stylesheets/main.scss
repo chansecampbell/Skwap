@@ -1,23 +1,30 @@
 @font-face {
   font-family: 'Raleway';
-  src: url(font-path('Raleway-Medium.ttf'))
+  // src: url(font-path('Raleway-Medium.ttf'))
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(font-path('OpenSans-Regular.ttf'))
 }
 
 body {
   list-style-type: none;
-  // font-family: 'Roboto Slab', serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
-h1 {
+h1, h2, h3, h4 {
   font-family: 'Raleway', sans-serif;
 }
 
 .row.main-row {
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 
 a {
   color: black;
+  text-decoration: none;
 }
 
 a:hover {
@@ -36,11 +43,9 @@ input.button {
 .row.top-spacer {
   margin-top: 20px;
 }
-// a.card {
-//   color: pink;
-// }
 
-li a img,
+
+a img,
 .my-picture img {
   border: 5px solid #333;
 }
@@ -119,6 +124,7 @@ li.name {
 
 .top-bar-section ul li > a {
   font-size: 0.7em;
+  font-family: Raleway;
 }
 
 .personal-header {

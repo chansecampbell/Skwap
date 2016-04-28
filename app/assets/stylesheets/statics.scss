@@ -3,15 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-// Title cards
-@import url(//fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900);
-
 html,body { // for demo only
   background: #FAFAFA;
 }
 
 .card {
-  font-family: 'Roboto', sans-serif;
   overflow: hidden;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   color: #272727;

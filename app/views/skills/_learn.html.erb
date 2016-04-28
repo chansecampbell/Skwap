@@ -5,7 +5,7 @@
 
     <div class="card">
       <div class="content">
-        <li><strong>You applied to learn: <%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
+        <li><strong>You applied to learn: </strong></li>
 
         <%  users = User.where(id: connection.receiver_id) %>
         <% users.each do |user| %>
@@ -17,6 +17,7 @@
           </div>
 
           <div class="medium-8 columns">
+          <h3><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></h3>
             <li><strong>Master:</strong> <%= user.first_name %></li>
             <li><strong>Lesson status:</strong> <%= connection.status %></li>
 

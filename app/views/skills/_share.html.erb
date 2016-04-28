@@ -6,12 +6,15 @@
       <div class="content">
         <% users = User.where(id: connection.sender_id) %>
         <% users.each do |user| %>
+        <li><strong><%= user.first_name %> would like to learn: </strong></li>
         <div class="row">
+
         <div class="medium-4 columns">
-        <li><%= link_to image_tag(user.photo.thumb.url), skill_connection_path(connection.skill_id, connection)  %></li>
+        <%= link_to image_tag(user.photo.thumb.url), skill_connection_path(connection.skill_id, connection)  %>
         </div>
+
         <div class="medium-8 columns">
-        <li>I'd like to learn: <strong><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></strong></li>
+        <h3><%= link_to connection.skill.try(:title), skill_connection_path(connection.skill_id, connection) %></h3>
         <li><strong>Padawan:</strong> <%= user.first_name %></li>
         <% end %>
         <li><strong>Lesson status:</strong> <%= connection.status %></li>
