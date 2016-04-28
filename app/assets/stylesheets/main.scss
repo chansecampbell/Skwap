@@ -19,22 +19,24 @@ body {
 //   height: 90vh;
 // }
 
-.london {
+.type {
+  position: fixed;
+  left: 15%;
+  top: 40%;
+  height: 200px;
+  width: 600px;
+  color: white;
+  font-size: 2em;
+  // text-transform: translate(-100px, -100px)
+}
+
+body.london {
   background-color: #FFCC2F;
-  background-size: cover;
-  height: 90vh;
+ 
 }
 
 .welcome-message {
   color: white;
-}
-
-.form {
-  position: fixed;
-  width: 400px;
-  height: 400px;
-  left: 50%;
-  top: 50%;
 }
 
 h1, h2, h3, h4 {
@@ -45,6 +47,8 @@ h1, h2, h3, h4 {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
+
 
 a {
   color: black;
@@ -110,6 +114,10 @@ color: #fff;
 //     margin: 0;
 //   }
 // }
+
+.alert-box.secondary {
+  margin: 0;
+}
 
 // header text
 
