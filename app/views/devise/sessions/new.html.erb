@@ -1,6 +1,33 @@
 <body class="london">
 
- <div id="myModal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <div class="row front-row">
+    <div class="medium-12 columns">
+
+      <div class="row">
+        <div class="medium-5 columns">
+
+          <div class="type">
+            <span class="type-font">I would like to..</span><br>
+            <span class="element"></span>
+
+          </div>
+        </div>
+        <div class="medium-7 columns">
+
+          <div class="mac">
+            <img src="/assets/macskwap.png"><br>
+            <span class="mac-font"><strong>Share what you know, learn what you dont.</strong></span><br>
+            <span class="mac-font2">The world's first free skill swapping marketplace.</span><br>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="myModal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
    <div class="form">
 
      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -117,45 +144,7 @@
      <% end %>
    </div>
  </div>
-<a class="close-reveal-modal" aria-label="Close">&#215;</a>
-</div>
-
-<div class="row front-row">
-  <div class="medium-12 columns">
-
-  <div class="row">
-    <div class="medium-5 columns">
-
-<div class="type">
-  <span class="type-font">I would like to..</span><br>
-  <script>
-   $(function(){
-     $(".element").typed({
-       strings: ["discover new recipes..", "learn to speak Spanish..", "take better photographs..", "learn to code..", "get rid of this beer belly..", "write a novel..", "learn to dance..", "share my skills..", "learn for free.."],
-       typeSpeed: 70,
-       startDelay: 0.5,
-       loop: true
-     });
-   });
- </script>
-
- <span class="element"></span>
-
-</div>
-</div>
-<div class="medium-7 columns">
-
-<div class="mac">
-  <img src="/assets/macskwap.png"><br>
-  <span class="mac-font"><strong>Share what you know, learn what you dont.</strong></span><br>
-   <span class="mac-font2">The world's first free skill swapping marketplace.</span><br>
-
-</div>
-
-
-</div>
-</div>
-</div>
+ <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
 </body>

@@ -18,23 +18,20 @@
 $(function(){ 
 
   $(document).foundation();
-  // var page = $("body").has(".front-image")
-
-  // var img = "/assets/drawing-sa.jpeg"
-
-  // page.css("background-image", "url(" + img + ")");
-  
-  // var searchIcon = "<i class='fa fa-search' aria-hidden='true'></i>"
-  // $('input.search-button').val(searchIcon)
-  // $(".share-container").on('mouseover', function(){
-  //   $(this).css("color", "white");
-  //   $("body").css("background-image", "url('/assets/citycars.jpeg')");
-
-  //   });
 
   // $(".share-container").on('mouseout', function(){
   //   // $(this).css("background", "white");
   //   $("body").css("background", "white");
+
+
+    $(function(){
+      $(".element").typed({
+        strings: ["discover new recipes..", "learn to speak Spanish..", "take better photographs..", "learn to code..", "get rid of this beer belly..", "write a novel..", "learn to dance..", "share my skills..", "learn for free.."],
+        typeSpeed: 70,
+        startDelay: 0.5,
+        loop: true
+      });
+    });
 
     // });
 

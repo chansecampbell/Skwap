@@ -23,6 +23,7 @@
       <% if user_signed_in? %>
       <li><%= link_to "HOME", root_path %></li>
       <li><%= link_to "ABOUT", about_path %></li>
+      <li><%= link_to "PROFILE", user_path(current_user.id) %></li>
       <li><%= link_to 'LEARN', skills_path(:anchor => "learn") %></li>
       <li><%= link_to 'SHARE', new_skill_path(:anchor => "share") %></li>
       <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
