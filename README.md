@@ -1,6 +1,6 @@
 ![screen shot 2016-04-29 at 11 45 19](https://cloud.githubusercontent.com/assets/8389262/14915758/3940ac22-0e0d-11e6-9768-a70f91573933.png)
 
-![screen shot 2016-04-29 at 11 40 14](https://cloud.githubusercontent.com/assets/8389262/14915767/513f84ba-0e0d-11e6-8ed8-3f5220e5a640.png)
+![screen shot 2016-04-29 at 11 44 51](https://cloud.githubusercontent.com/assets/8389262/14915822/aa879184-0e0d-11e6-95a7-4c75ccdcb39a.png)
 
 ![screen shot 2016-04-29 at 11 45 11](https://cloud.githubusercontent.com/assets/8389262/14915742/1f49f594-0e0d-11e6-98ea-98379e12e8a0.png)
 
