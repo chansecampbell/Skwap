@@ -235,6 +235,10 @@ body.london {
 //   font-size: 1em;
 // }
 
+.skills-header {
+  color: #333;
+}
+
 // ********** CONNECTION SHOW PAGE COMMENTS
 
 #current {
@@ -290,7 +294,7 @@ body.london {
 @media only screen and (min-width: 40.0625em) {
 
   .top-bar-section li:not(.has-form) a:not(.button) {
-    padding: 0 1rem;
+    padding: 0 0.8rem;
   }
 
 }
