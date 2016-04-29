@@ -23,36 +23,10 @@
 
       <div class="content" id="user-listings-content">
        
-<!--      <div class="row">
-       <div class="medium-12 columns">
-         <div class="card">
-         <div class="content">
 
-         <div class="row">
-           <div class="medium-3 columns">
-              <span class="my-picture"><%= image_tag(current_user.photo.thumb.url) %></span>
-              </div>
-              <div class="medium-9 columns">
-             <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
-             <h4>Credits:</strong> <%= current_user.credits %></h4>
-             <div class="row">
-               <div class="medium-12 columns">
-               <div class="title">Classes I've listed:</div>
-               <#% current_user.skills.each do |skill| %>
-                     <li><strong><#%= link_to skill.try(:title), edit_skill_path(skill) %></strong></li>
-                 </div>
-               </div>
-               <#% end %>
-            </div>
-            </div>
-
-            </div>
-            </div>
-            </div>
-          </div> -->
-          
-          <%= render "share" %>
-        </div>
+        
+        <%= render "share" %>
       </div>
     </div>
   </div>
+</div>
