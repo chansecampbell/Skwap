@@ -7,6 +7,8 @@ gem 'rmagick'
 gem 'carrierwave', '0.10.0'
 # Used to be able to search using keywords
 gem 'ransack'
+# Used to upload photos to Amazon S3 from the app
+gem 'fog'
 # Used for creating comments
 gem 'acts_as_commentable', '4.0.2'
 # Css framework
@@ -60,7 +62,3 @@ group :development do
 end
 
 gem 'rails_12factor', group: :production
-
-
-
-
