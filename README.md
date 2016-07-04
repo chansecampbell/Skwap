@@ -1,17 +1,13 @@
-![screen shot 2016-04-29 at 11 45 19](https://cloud.githubusercontent.com/assets/8389262/14915758/3940ac22-0e0d-11e6-9768-a70f91573933.png)
-
-![screen shot 2016-04-29 at 11 44 51](https://cloud.githubusercontent.com/assets/8389262/14915822/aa879184-0e0d-11e6-95a7-4c75ccdcb39a.png)
+# Skwap
+**Skwap** is an online social sharing platform for people who want to connect in the *London* area and learn some **new skills** for *free*. It was inspired by other online platforms such as **Fiverr** and **Depop**.
 
 ![screen shot 2016-04-29 at 11 45 11](https://cloud.githubusercontent.com/assets/8389262/14915742/1f49f594-0e0d-11e6-98ea-98379e12e8a0.png)
 
 
-
-
-# Introduction
-**Skwap** is an online social sharing platform for people who want to connect in the *London* area and learn some **new skills** for *free*. It was inspired by other online platforms such as **Fiverr** and **Depop**.
-
 # How it works
 The site works on a *credits* basis, allowing users to recieve an initial credit upon first joining the site in which they can connect with another user locally and arrange a free meetup. Upon completition, the user is *deducted* a credit and the teacher is *rewarded* one for sharing a skill. In this way users are encouraged to **give back to the community** in order to earn more credits to continue their free learning in **whichever** area they would like. A hosted version of **Skwap** can be found [**here**](http://skwap.herokuapp.com/).
+
+![screen shot 2016-04-29 at 11 44 51](https://cloud.githubusercontent.com/assets/8389262/14915822/aa879184-0e0d-11e6-95a7-4c75ccdcb39a.png)
 
 # Requirements 
 1. Create a fully functioning multi-page website built in Rails
