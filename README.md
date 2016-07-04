@@ -1,5 +1,5 @@
 # Skwap
-**Skwap** is an online social sharing platform for people who want to connect in the *London* area and learn some **new skills** for *free*. It was inspired by other online platforms such as **Fiverr** and **Depop**.
+**Skwap** is an online social sharing platform for people who want to connect in the *London* area and learn some **new skills** for *free*. It was inspired by other online platforms such as **Fiverr** and **Depop**. It was built in **Ruby on Rails** in only 5 days.
 
 ![screen shot 2016-04-29 at 11 45 11](https://cloud.githubusercontent.com/assets/8389262/14915742/1f49f594-0e0d-11e6-98ea-98379e12e8a0.png)
 
@@ -21,6 +21,15 @@ Skwap was built in **Ruby on Rails**, using **HTML** and **CSS** along with a li
 - [**Animate.css**](https://daneden.github.io/animate.css/)
 - [**Typed.js**](http://www.mattboldt.com/demos/typed-js/)
 
+# Planning
+I first created a **Trello** board for the project in order to properly manage the flow of tasks that I would need to tackle to achieve my project goal. This was referred to throughout to break down the size of my tasks.
+
+![Hello World 1](http://i653.photobucket.com/albums/uu259/sheree1967/sheree1967046/skwaptrello_zpsk9clqsp8.png)
+
+Next I began with my first Trello task, planning out how the user would experience and interact with the site. This mainly took place with **wireframes** created on *Balsamiq*, but I also planned some of the pages out using paper wireframes too.
+
+![Hello World 1](http://i653.photobucket.com/albums/uu259/sheree1967/sheree1967045/skwap_app_zpskddgqw4d.png)
+
 # Credits
 - [**Pexels**](https://www.pexels.com)
-- **GA Instructors & TA's**: Alex, Caroline & Ollie.
+- **GA Instructors & TA's**: Alex, Caroline, Ollie & Tom.
